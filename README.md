@@ -21,7 +21,7 @@ The application should have simple but pleasant interface with intuitive navigat
 #### Constraints
 The program should be written in Java and fully tested before May 15, 2016.
 
-### Contents and Features Included
+### Contents and Features
 - A pool of questions and correct answers implemented using a database.
 - User registration to allow access to past session results.
 - A list of publications (books or articles) on the topic.
