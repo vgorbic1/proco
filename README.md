@@ -73,7 +73,18 @@ The program should be written in Java and fully tested before May 15, 2016.
 #### Use Case Diagram
 ![Use Case Diagram](https://github.com/vgorbic1/proco/blob/master/images/use_case.jpg)
 #### Pages - Views
-[image]
+|Page | File| Description |
+| --- | --- | --- |
+|welcome|index.jsp|Describes the purpose of the application and invites visitor to register in order to take a test|
+|register|register.jsp|Displays a form to accept visitor's username and password|
+|login|login.jsp|Displays a form to log in the app|
+|test|test.jsp|Provides access to set categories, number of questions, and invites to take a test|
+|question|quest.jsp|Displays a question, answer, and main controls|
+|statistics|stat.jsp|Display statistics on the taken test. Invites to take another test|
+|admin-login|admin/login.jsp|Displays a form for administrator's login|
+|admin-console|admin/tests.jsp|Displays a form to add or remove question / answer / category|
+|error|error.jsp|Generic Error page. For example, if access to a resource is denied|
+
 #### Screen Design
 [image]
 #### Application Flow
