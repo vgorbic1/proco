@@ -71,7 +71,7 @@ The program should be written in Java and fully tested before May 15, 2016.
 
 ### Prototype and Design
 #### Use Case Diagram
-[image]
+https://github.com/vgorbic1/proco/blob/master/images/use_case.jpg
 #### Pages - Views
 [image]
 #### Screen Design
