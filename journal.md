@@ -1,4 +1,4 @@
-## Project Journal
+## Development Journal
 
 #### Week 4
 2/8/2016
