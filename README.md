@@ -1,10 +1,10 @@
 # Proco
 Proco is a questionnaire application. The current version allows the user to test his knowledge in different topics related to Information Technologies and Programming Languages. The pilot version provides correct answers and allows the user to check off whether he/she feels that the question was answered correctly or not. The application provides statistical data after the test session is completed.
 
-####[Demo](http://tomcat-vgorbic1.rhcloud.com/proco/)
+  ####[Demo](http://tomcat-vgorbic1.rhcloud.com/proco/)
 
 - [Problem Statement](#problem-statement)
-- [Contents and the features](#contents-and-features)
+- [Contents and Features](#contents-and-features)
 - [Technologies and Techniques](#technologies-and-techniques)
 - [Prototype and Design](#prototype-and-design)
 - [Database](#database)
