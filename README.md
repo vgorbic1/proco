@@ -3,8 +3,8 @@ Proco is a questionnaire application. The current version allows the user to tes
 
 [Demo App](http://tomcat-vgorbic1.rhcloud.com/proco/)
 
-- [Problem Statement](#Problem-Statement)
-- [Contents and the features](#Contents-and-Features)
+- [Problem Statement](#problem-statement)
+- [Contents and the features](#contents-and-features)
 
 ### Problem Statement
 The author feels a need in an application that would attest his knowledge in a particular IT topic. Additionally, the program has to serve as a tool to memorize or refresh different technical concepts. The application may help with preparation for job interviews or writing technical assignments.
