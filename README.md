@@ -5,6 +5,7 @@ Proco is a questionnaire application. The current version allows the user to tes
 
 - [Problem Statement](#problem-statement)
 - [Contents and the features](#contents-and-features)
+- [Technologies and Techniques](#technologies-and-techniques)
 
 ### Problem Statement
 The author feels a need in an application that would attest his knowledge in a particular IT topic. Additionally, the program has to serve as a tool to memorize or refresh different technical concepts. The application may help with preparation for job interviews or writing technical assignments.
@@ -28,5 +29,39 @@ The program should be written in Java and fully tested before May 15, 2016.
 - User registration to allow access to past session results.
 - A list of publications (books or articles) on the topic.
 - Hints, guides, or other documentation on how to use the application.
+
+[Top &#8593;](#proco)
+
+### Technologies and Techniques
+#### Security / Authentication
+- admin role: create/read/update/delete (crud) questions and answers
+- user role: submit registration info get test results
+- all: anyone can view list of publications (no login required)
+
+#### Database (MySQL and Hibernate)
+- Store users and roles
+- Store questions and answers
+- Store user password and statistics
+
+#### Web Services or APIs
+- ISNB data for suggested publications
+
+#### CSS framework
+- Pure CSS
+
+#### Logging
+- Configurable logging using Log4J. Only errors will normally be logged.
+
+#### Hosting
+- Demo site and database hosted on [OpenShift](https://tomcat-vgorbic1.rhcloud.com/pico/)
+
+#### Integration
+- Jenkins for Continuous Integration
+
+#### Testing
+- jUnit tests to achieve 80% code coverage
+
+#### Independent Research Topic:
+- Encoding
 
 [Top &#8593;](#proco)
