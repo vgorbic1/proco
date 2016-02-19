@@ -21,7 +21,7 @@ The application should have simple but pleasant interface with intuitive navigat
 #### Constraints
 The program should be written in Java and fully tested before May 15, 2016.
 
-[&#8592;Top](#proco)
+[&#8593; Top](#proco)
 
 ### Contents and Features
 - A pool of questions and correct answers implemented using a database.
