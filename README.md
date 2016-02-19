@@ -7,8 +7,8 @@ Proco is a questionnaire application. The current version allows the user to tes
 - [Technologies and Techniques](#technologies-and-techniques)
 - [Prototype and Design](#prototype-and-design)
 - [Database](#database)
-- [Project Plan]()
-- [Development Journal]()
+- [Project Plan](https://github.com/vgorbic1/proco/blob/master/project_plan.md)
+- [Development Journal](https://github.com/vgorbic1/proco/blob/master/journal.md)
 
 ### Problem Statement
 The author feels a need in an application that would attest his knowledge in a particular IT topic. Additionally, the program has to serve as a tool to memorize or refresh different technical concepts. The application may help with preparation for job interviews or writing technical assignments.
