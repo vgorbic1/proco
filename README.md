@@ -6,6 +6,10 @@ Proco is a questionnaire application. The current version allows the user to tes
 - [Problem Statement](#problem-statement)
 - [Contents and the features](#contents-and-features)
 - [Technologies and Techniques](#technologies-and-techniques)
+- [Prototype and Design](#prototype-and-design)
+- [Database](#database)
+- [Project Plan]()
+- [Development Journal]()
 
 ### Problem Statement
 The author feels a need in an application that would attest his knowledge in a particular IT topic. Additionally, the program has to serve as a tool to memorize or refresh different technical concepts. The application may help with preparation for job interviews or writing technical assignments.
@@ -63,5 +67,25 @@ The program should be written in Java and fully tested before May 15, 2016.
 
 #### Independent Research Topic:
 - Encoding
+
+[Top &#8593;](#proco)
+
+### Prototype and Design
+#### Use Case Diagram
+[image]
+#### Pages - Views
+[image]
+#### Screen Design
+[image]
+#### Application Flow
+[image]
+
+[Top &#8593;](#proco)
+
+### Database
+#### Database Diagram
+[image]
+####Table Structure
+[image]
 
 [Top &#8593;](#proco)
