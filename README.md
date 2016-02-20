@@ -86,7 +86,38 @@ The program should be written in Java and fully tested before May 15, 2016.
 |error|error.jsp|Generic Error page. For example, if access to a resource is denied|
 
 #### Screen Design
-[image]
+index.jsp
+
+![index.jsp](https://github.com/vgorbic1/proco/blob/master/images/index.jpg)
+
+register.jsp
+
+![register.jsp](https://github.com/vgorbic1/proco/blob/master/images/register.jpg)
+
+login.jsp
+
+![login.jsp](https://github.com/vgorbic1/proco/blob/master/images/login.jpg)
+
+test.jsp
+
+![test.jsp](https://github.com/vgorbic1/proco/blob/master/images/test.jpg)
+
+quest.jsp question only
+
+![quest.jsp](https://github.com/vgorbic1/proco/blob/master/images/quest_q.jpg)
+
+quest.jsp question with answer
+
+![quest.jsp](https://github.com/vgorbic1/proco/blob/master/images/quest_a.jpg)
+
+stat.jsp
+
+![stat.jsp](https://github.com/vgorbic1/proco/blob/master/images/stat.jpg)
+
+admin/tests.jsp
+
+![admin/tests.jsp](https://github.com/vgorbic1/proco/blob/master/images/admin_tests.jpg)
+
 #### Application Flow
 [image]
 
