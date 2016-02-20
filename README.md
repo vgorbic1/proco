@@ -125,7 +125,8 @@ admin/tests.jsp
 
 ### Database
 #### Database Diagram
-[image]
+![database_diagram.jsp](https://github.com/vgorbic1/proco/blob/master/images/database_diagram.jpg)
+
 ####Table Structure
 [image]
 
