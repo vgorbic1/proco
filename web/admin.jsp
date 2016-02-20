@@ -1,20 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
   User: Vlad
-  Date: 2/19/2016
-  Time: 1:53 PM
+  Date: 2/20/2016
+  Time: 9:50 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>Proco</title>
-  </head>
-  <body>
-  <h1>Hello Proco!</h1>
-  <ul>
-    <li><a href="admin.jsp">Take me to the Admin Page</a></li>
+<head>
+    <title>Admin</title>
+</head>
+<body>
+This is the admin page where fancy admin-only stuff happens.
+<ul>
     <li><a href="display.jsp">Take me to the Display Page</a></li>
-  </ul>
-  </body>
+    <li><a href="index.jsp">Take me Home</a></li>
+</ul>
+</body>
 </html>
