@@ -119,7 +119,7 @@ admin/tests.jsp
 ![admin/tests.jsp](https://github.com/vgorbic1/proco/blob/master/images/admin_tests.jpg)
 
 #### Application Flow
-[image]
+![app_flow.jsp](https://github.com/vgorbic1/proco/blob/master/images/app_flow.jpg)
 
 [Top &#8593;](#proco)
 
