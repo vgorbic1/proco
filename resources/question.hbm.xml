@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gorbich.entity.Question" table="questions">
+        <meta attribute="class-description">This class contains the questions and answers.</meta>
+        <!-- Map primary key (id) to the corresponding column -->
+        <id name="questionId" type="int"
+            column="question_id">
+            <generator class="native"/>
+        </id>
+        <!--Add a property for all other instance variables/columns-->
+        <property name="questionBody" column="question" type="string"/>
+        <property name="answer" column="answer" type="string"/>
+        <property name="image" column="image_url" type="string"/>
+        <property name="level" column="level" type="string"/>
+    </class>
+</hibernate-mapping>
