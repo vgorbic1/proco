@@ -128,6 +128,14 @@ admin/tests.jsp
 ![database_diagram.jsp](https://github.com/vgorbic1/proco/blob/master/images/database_diagram.jpg)
 
 ####Table Structure
-[image]
+**Table Questions**
+
+|column name|datatype|constraints|
+|---|---|---|
+|question_id|int|pimary key, auto_increment, not null|
+|question|text|not null|
+|answer|text|not null|
+|image_url|varchar(255)| |
+|level|varchar(50)|not null|
 
 [Top &#8593;](#proco)
