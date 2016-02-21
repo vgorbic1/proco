@@ -27,7 +27,7 @@
 #### Week 6
 2/22/2016
 
-**Tasks Completed:**
+**Tasks to Complete:**
 - get project approval.
 - create basic database input/output functionality locally.
 - create basic database input/output functionality remotely.
