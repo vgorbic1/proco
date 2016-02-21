@@ -1,17 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Vlad
-  Date: 2/20/2016
-  Time: 9:50 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Admin</title>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
 </head>
 <body>
-This is the admin page where fancy admin-only stuff happens.
 <ul>
     <li><a href="display.jsp">Take me to the Display Page</a></li>
     <li><a href="index.jsp">Take me Home</a></li>

@@ -11,7 +11,6 @@
     <title>Uh-Oh</title>
 </head>
 <body>
-Invalid username/password combination. <br />
-<a href="login.jsp">Try again</a>
+Invalid username/password combination.
 </body>
 </html>

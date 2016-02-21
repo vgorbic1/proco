@@ -9,14 +9,24 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<form action="j_security_check" method="post">
-    <table>
-        <tr><td>user name: </td><td><input type="text" name="j_username"></td></tr>
-        <tr><td>password: </td><td><input type="password" name="j_password"></td></tr>
-        <tr><td><input type="submit" value="log in"></td></tr>
-    </table>
+<form action="j_security_check" method="post" class="pure-form pure-form-stacked">
+    <label>user name: </label>
+    <input type="text" name="j_username" />
+    <label>password: </label>
+    <input type="password" name="j_password">
+    <br />
+    <input type="submit" class="pure-button" value="log in">
 </form>
 
 </body>
