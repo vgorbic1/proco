@@ -22,4 +22,5 @@
 | 2/19/16 | Setup project locally |4|
 | 2/20/16 | Create project documentation | 5 |
 | 2/21/16 | Deploying project with Form Auth. Completing Exercises. | 6 |
-| **2/22/16** |
+| **2/22/16** | Add table structure and more JSPs | 2 |
+
