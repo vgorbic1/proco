@@ -129,6 +129,21 @@ admin/tests.jsp
 ![database_diagram.jsp](https://github.com/vgorbic1/proco/blob/master/images/database_diagram.jpg)
 
 ####Table Structure
+**Table users**
+
+|column name|datatype|constraints|
+|---|---|---|
+|user_id|int|pimary key, auto_increment, not null|
+|user_name|varchar(15)|not null|
+|user_pass|varchar(15)|not null|
+
+**Table users_roles**
+
+|column name|datatype|constraints|
+|---|---|---|
+|user_name|varchar(15)|pimary key, not null|
+|role_name|varchar(15)|pimary key, not null|
+
 **Table Questions**
 
 |column name|datatype|constraints|
