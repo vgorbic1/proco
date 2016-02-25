@@ -24,4 +24,5 @@
 | 2/21/16 | Deploying project with Form Auth. Completing Exercises. | 6 |
 | **2/22/16** | Add table structure and more JSPs | 2 |
 | 2/23/16 | Assigned Readings | 1 |
+| 2/24/16 | Assigned Readings, Exercises | 2.5 |
 
