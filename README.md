@@ -48,16 +48,16 @@ The program should be written in Java and fully tested before May 15, 2016.
 - Store user password and statistics
 
 #### Web Services or APIs
-- ISNB data for suggested publications
+- ISBN data for suggested publications
 
 #### CSS framework
-- Pure CSS
+- [Pure.css](http://purecss.io/)
 
 #### Logging
-- Configurable logging using Log4J. Only errors will normally be logged.
+- Configurable logging using Log4j. Only errors will normally be logged in a procoLog file.
 
 #### Hosting
-- Demo site and database hosted on [OpenShift](https://tomcat-vgorbic1.rhcloud.com/pico/)
+- Demo site and database hosted on [OpenShift](https://tomcat-vgorbic1.rhcloud.com/proco/)
 
 #### Integration
 - Jenkins for Continuous Integration
@@ -76,9 +76,8 @@ The program should be written in Java and fully tested before May 15, 2016.
 #### Pages - Views
 |Page | File| Description |
 | --- | --- | --- |
-|welcome|index.jsp|Describes the purpose of the application and invites visitor to register in order to take a test|
+|welcome|index.jsp|Describes the purpose of the application and invites visitor to login or register in order to take a test|
 |register|register.jsp|Displays a form to accept visitor's username and password|
-|login|login.jsp|Displays a form to log in the app|
 |test|test.jsp|Provides access to set categories, number of questions, and invites to take a test|
 |question|quest.jsp|Displays a question, answer, and main controls|
 |statistics|stat.jsp|Display statistics on the taken test. Invites to take another test|
