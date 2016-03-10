@@ -121,7 +121,7 @@ admin/tests.jsp
 
 ### Database
 #### Database Diagram
-![database_diagram.jsp](https://github.com/vgorbic1/proco/blob/master/images/database_diagram.jpg)
+![db.jsp](https://github.com/vgorbic1/proco/blob/master/images/db.jpg)
 
 ####Table Structure
 **Table users**
