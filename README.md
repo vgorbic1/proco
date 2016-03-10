@@ -94,10 +94,6 @@ register.jsp
 
 ![register.jsp](https://github.com/vgorbic1/proco/blob/master/images/register.jpg)
 
-login.jsp
-
-![login.jsp](https://github.com/vgorbic1/proco/blob/master/images/login.jpg)
-
 test.jsp
 
 ![test.jsp](https://github.com/vgorbic1/proco/blob/master/images/test.jpg)
