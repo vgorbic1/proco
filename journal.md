@@ -27,8 +27,22 @@
 #### Week 6
 2/22/2016
 
-**Tasks to Complete:**
-- get project approval.
-- create basic database input/output functionality locally.
-- create basic database input/output functionality remotely.
-- add more items on jsp pages.
+**Tasks Completed:**
+- Project approved.
+- Basic database input/output functionality created.
+- JSP pages created.
+
+#### Week 7
+2/29/2016
+
+**Tasks Completed:**
+- Interface design created
+- CSS framework connected
+
+#### Week 8
+3/7/2016
+
+**Tasks Completed:**
+- Servlets with business logic created
+- Database CRUD functionality tested
+- Start to populate database with questions
