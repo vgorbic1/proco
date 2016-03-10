@@ -128,25 +128,25 @@ admin/tests.jsp
 
 |column name|datatype|constraints|
 |---|---|---|
-|user_id|int|pimary key, auto_increment, not null|
-|user_name|varchar(15)|not null|
-|user_pass|varchar(15)|not null|
+|user_id|int(11)|pimary key, auto_increment, not null|
+|username|varchar(255)|not null|
+|pass|varchar(255)|not null|
 
 **Table users_roles**
 
 |column name|datatype|constraints|
 |---|---|---|
-|user_name|varchar(15)|pimary key, not null|
-|role_name|varchar(15)|pimary key, not null|
+|username|varchar(255)|pimary key, not null|
+|role|varchar(255)|pimary key, not null|
 
-**Table Questions**
+**Table questions**
 
 |column name|datatype|constraints|
 |---|---|---|
-|question_id|int|pimary key, auto_increment, not null|
-|question|text|not null|
-|answer|text|not null|
-|image_url|varchar(255)| |
+|question_id|int(11)|pimary key, auto_increment, not null|
+|category|varchar(50)|not null|
 |level|varchar(50)|not null|
+|inquiry|text|not null |
+|answer|test|not null|
 
 [Top &#8593;](#proco)
