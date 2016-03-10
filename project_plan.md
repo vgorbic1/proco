@@ -3,30 +3,36 @@
 #### Week 4
 
 #### Week 5
-- [ ] Weekly journal entry
-- [ ] Create DAO for questions
-- [ ] Add tests for new functionality
+- [x] Weekly journal entry
+- [x] Create DAO for questions
+- [x] Add tests for new functionality
  
 #### Week 6
-- [ ] Weekly journal entry
-- [ ] Integration with isbn api
-- [ ] Set up Continuous Integration on openshift
+- [x] Weekly journal entry
+- [x] Integration with isbn api
+- [x] Set up the app on openshift
  
 #### Week 7
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
+- [x] Create jsp test on openshift
  
 #### Week 8
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
+- [x] Create servlets with business logic
 - [ ] Code review
  
 #### Week 9
 - [ ] Weekly journal entry
+- [ ] Create all business logic
  
 #### Week 10
 - [ ] Weekly journal entry
+- [ ] Test busines logic and servlets
 
 #### Week 11
 - [ ] Weekly journal entry
+- [ ] Add web services
+- [ ] Populate database
 
 #### Week 12
 - [ ] Weekly journal entry
