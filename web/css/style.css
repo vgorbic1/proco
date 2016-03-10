@@ -1,3 +1,22 @@
 body {
     padding: 2em;
 }
+
+#app {
+    margin: auto;
+    width: 20em;
+    height: 40em;
+    text-align: left;
+}
+
+button {
+    margin-top: 1.5em;
+}
+
+p.success {
+     color: green;
+}
+
+p.error {
+    color: red;
+}

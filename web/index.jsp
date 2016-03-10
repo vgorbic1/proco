@@ -1,22 +1,19 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-    <title>Proco</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-    <!--<![endif]-->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+<jsp:include page="includes/head.jsp" />
   <body>
-  <h1>Hello Proco!</h1>
-  <ul>
-    <li><a href="admin.jsp">Take me to the Admin Page</a></li>
-    <li><a href="display.jsp">Take me to the Display Page</a></li>
-  </ul>
+    <div id="app">
+     <h1>Proco</h1>
+      <p>Test your knowledge in different IT areas.</p>
+      <div id="login">
+        <form class="pure-form pure-form-stacked" action="/login" method="post">
+          <input type="text" placeholder="username" />
+          <input type="password" placeholder="password" />
+          <br />
+          <button type="submit" class="pure-button">log in</button>
+        </form>
+      </div>
+      <div id="register">
+        <a href="/register.jsp">Register</a>
+      </div>
+    </div>
   </body>
 </html>
