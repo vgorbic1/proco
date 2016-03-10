@@ -25,4 +25,6 @@
 | **2/22/16** | Add table structure and more JSPs | 2 |
 | 2/23/16 | Assigned Readings | 1 |
 | 2/24/16 | Assigned Readings, Exercises | 2.5 |
+| **3/7/16 | Configuration troubleshooting | 3 |
+| 3/9/16 | Add servlets and test them | 4 |
 
