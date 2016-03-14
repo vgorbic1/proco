@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
-    <title>${title}</title>
+    <meta charset="utf-8">
+    <title>Proco | Access Denied</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--[if lte IE 8]>
@@ -10,18 +11,13 @@
     <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+<html>
+<head>
+    <title>Invalid username/password combination.</title>
 </head>
 <body>
-<div id="app">
-<form action="/register" method="post" class="pure-form pure-form-stacked">
-    <label>user name: </label>
-    <input type="text" name="" />
-    <label>password: </label>
-    <input type="password" name="">
-    <br />
-    <button type="submit" class="pure-button">register</button>
-</form>
-</div>
+  <p>Invalid user name or password. Access denied.</p>
 </body>
 </html>

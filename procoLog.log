@@ -1,0 +1,124 @@
+2016-03-11 21:02:07,517 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2016-03-11 21:02:07,530 13   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.2.21.Final}
+2016-03-11 21:02:07,557 40   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-03-11 21:02:07,560 43   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-03-11 21:02:07,639 122  [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-03-11 21:02:07,639 122  [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-03-11 21:02:07,956 439  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: question.hbm.xml
+2016-03-11 21:02:08,295 778  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: user.hbm.xml
+2016-03-11 21:02:08,364 847  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: userRoles.hbm.xml
+2016-03-11 21:02:08,406 889  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-03-11 21:02:08,559 1042 [main] WARN  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-03-11 21:02:08,591 1074 [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20
+2016-03-11 21:02:08,591 1074 [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-03-11 21:02:08,591 1074 [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/proco]
+2016-03-11 21:02:08,592 1075 [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=admin, password=****}
+2016-03-11 21:02:09,155 1638 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-03-11 21:02:09,747 2230 [main] WARN  org.hibernate.mapping.RootClass  - HHH000039: Composite-id class does not override hashCode(): com.gorbich.proco.entity.UserRolesPK
+2016-03-11 21:02:09,772 2255 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-03-11 21:02:09,808 2291 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-03-11 21:04:22,265 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2016-03-11 21:04:22,279 14   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.2.21.Final}
+2016-03-11 21:04:22,282 17   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-03-11 21:04:22,284 19   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-03-11 21:04:22,340 75   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-03-11 21:04:22,340 75   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-03-11 21:04:22,443 178  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: question.hbm.xml
+2016-03-11 21:04:22,598 333  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: user.hbm.xml
+2016-03-11 21:04:22,653 388  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: userRoles.hbm.xml
+2016-03-11 21:04:22,679 414  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-03-11 21:04:22,794 529  [main] WARN  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-03-11 21:04:22,808 543  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20
+2016-03-11 21:04:22,809 544  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-03-11 21:04:22,809 544  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/proco]
+2016-03-11 21:04:22,810 545  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=admin, password=****}
+2016-03-11 21:04:23,309 1044 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-03-11 21:04:23,520 1255 [main] WARN  org.hibernate.mapping.RootClass  - HHH000039: Composite-id class does not override hashCode(): com.gorbich.proco.entity.UserRolesPK
+2016-03-11 21:04:23,560 1295 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-03-11 21:04:23,572 1307 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-03-11 21:04:24,647 2382 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 1
+2016-03-11 21:04:24,648 2383 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 2
+2016-03-11 21:04:24,648 2383 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 3
+2016-03-11 21:05:39,515 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2016-03-11 21:05:39,529 14   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.2.21.Final}
+2016-03-11 21:05:39,533 18   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-03-11 21:05:39,536 21   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-03-11 21:05:39,583 68   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-03-11 21:05:39,584 69   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-03-11 21:05:39,695 180  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: question.hbm.xml
+2016-03-11 21:05:39,821 306  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: user.hbm.xml
+2016-03-11 21:05:39,871 356  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: userRoles.hbm.xml
+2016-03-11 21:05:39,899 384  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-03-11 21:05:40,055 540  [main] WARN  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-03-11 21:05:40,068 553  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20
+2016-03-11 21:05:40,068 553  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-03-11 21:05:40,069 554  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/proco]
+2016-03-11 21:05:40,069 554  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=admin, password=****}
+2016-03-11 21:05:40,766 1251 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-03-11 21:05:41,274 1759 [main] WARN  org.hibernate.mapping.RootClass  - HHH000039: Composite-id class does not override hashCode(): com.gorbich.proco.entity.UserRolesPK
+2016-03-11 21:05:41,319 1804 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-03-11 21:05:41,332 1817 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-03-11 21:05:42,107 2592 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 4
+2016-03-11 21:07:15,506 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2016-03-11 21:07:15,515 9    [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.2.21.Final}
+2016-03-11 21:07:15,518 12   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-03-11 21:07:15,521 15   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-03-11 21:07:15,566 60   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-03-11 21:07:15,567 61   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-03-11 21:07:15,686 180  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: question.hbm.xml
+2016-03-11 21:07:15,850 344  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: user.hbm.xml
+2016-03-11 21:07:15,901 395  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: userRoles.hbm.xml
+2016-03-11 21:07:15,939 433  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-03-11 21:07:16,148 642  [main] WARN  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-03-11 21:07:16,166 660  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20
+2016-03-11 21:07:16,167 661  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-03-11 21:07:16,167 661  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/proco]
+2016-03-11 21:07:16,167 661  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=admin, password=****}
+2016-03-11 21:07:16,738 1232 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-03-11 21:07:17,125 1619 [main] WARN  org.hibernate.mapping.RootClass  - HHH000039: Composite-id class does not override hashCode(): com.gorbich.proco.entity.UserRolesPK
+2016-03-11 21:07:17,139 1633 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-03-11 21:07:17,152 1646 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-03-11 21:07:17,881 2375 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 1
+2016-03-11 21:07:17,881 2375 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 2
+2016-03-11 21:07:17,881 2375 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 3
+2016-03-11 21:19:42,911 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2016-03-11 21:19:42,923 12   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.2.21.Final}
+2016-03-11 21:19:42,927 16   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-03-11 21:19:42,930 19   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-03-11 21:19:42,963 52   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-03-11 21:19:42,964 53   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-03-11 21:19:43,079 168  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: question.hbm.xml
+2016-03-11 21:19:43,205 294  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: user.hbm.xml
+2016-03-11 21:19:43,259 348  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: userRoles.hbm.xml
+2016-03-11 21:19:43,287 376  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-03-11 21:19:43,502 591  [main] WARN  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-03-11 21:19:43,515 604  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20
+2016-03-11 21:19:43,515 604  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-03-11 21:19:43,515 604  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/proco]
+2016-03-11 21:19:43,516 605  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=admin, password=****}
+2016-03-11 21:19:44,084 1173 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-03-11 21:19:44,323 1412 [main] WARN  org.hibernate.mapping.RootClass  - HHH000039: Composite-id class does not override hashCode(): com.gorbich.proco.entity.UserRolesPK
+2016-03-11 21:19:44,337 1426 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-03-11 21:19:44,353 1442 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2016-03-11 21:19:45,246 2335 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 1
+2016-03-11 21:19:45,246 2335 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 2
+2016-03-11 21:19:45,246 2335 [main] INFO  com.gorbich.proco.persistence.QuestionDaoHibernateTest  - 3
+2016-03-12 11:19:14,916 1    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+2016-03-12 11:19:14,999 84   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.2.21.Final}
+2016-03-12 11:19:15,014 99   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2016-03-12 11:19:15,018 103  [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2016-03-12 11:19:15,183 268  [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-03-12 11:19:15,183 268  [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-03-12 11:19:15,364 449  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: question.hbm.xml
+2016-03-12 11:19:15,506 591  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: user.hbm.xml
+2016-03-12 11:19:15,602 687  [main] INFO  org.hibernate.cfg.Configuration  - HHH000221: Reading mappings from resource: userRoles.hbm.xml
+2016-03-12 11:19:15,673 758  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2016-03-12 11:19:15,848 933  [main] WARN  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-03-12 11:19:15,880 965  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20
+2016-03-12 11:19:15,880 965  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2016-03-12 11:19:15,882 967  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/proco]
+2016-03-12 11:19:15,882 967  [main] INFO  org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=admin, password=****}
+2016-03-12 11:19:16,278 1363 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-03-12 11:19:16,513 1598 [main] WARN  org.hibernate.mapping.RootClass  - HHH000039: Composite-id class does not override hashCode(): com.gorbich.proco.entity.UserRolesPK
+2016-03-12 11:19:16,537 1622 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-03-12 11:19:16,563 1648 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory

@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
  * Created by Vlad on 3/3/2016.
  */
 public class QuestionDaoHibernateTest {
-    private final Logger log = Logger.getLogger(this.getClass());
 
     @Test
     public void testGetAllQuestions() throws Exception {
@@ -57,5 +56,19 @@ public class QuestionDaoHibernateTest {
         question.setAnswer("Test Add Answer");
         insertedQuestionId = questionHibernate.addQuestion(question);
         assertTrue(insertedQuestionId > 0);
+    }
+
+    @Test
+    public void testGetSpecificCategoryQuestions() throws Exception {
+        QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
+        List<Question> questions = questionHibernate.getSpecificCategoryQuestions("java");
+        assertTrue(questions.size() > 0);
+    }
+
+    @Test
+    public void testGetQuestionById() throws Exception {
+        QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
+        Question question = questionHibernate.getQuestionById(1);
+        assertTrue(question.getQuestionId() == 1);
     }
 }

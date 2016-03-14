@@ -3,6 +3,7 @@ package com.gorbich.proco.persistence;
 import com.gorbich.proco.entity.Question;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.ArrayList;
@@ -37,7 +38,6 @@ public class QuestionDaoHibernate {
             tx = session.beginTransaction();
             session.update(question);
             tx.commit();
-            log.info("Question updated");
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             log.error(e);
@@ -79,4 +79,43 @@ public class QuestionDaoHibernate {
         }
         return questionId;
     }
+
+    public List<Question> getSpecificCategoryQuestions(String category) {
+        List<Question> questions = new ArrayList<Question>();
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            Query query = session.createQuery("from Question where category = :category");
+            query.setParameter("category", category);
+            questions = query.list();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            log.error(e);
+        } finally {
+            session.close();
+        }
+        return questions;
+    }
+
+    public Question getQuestionById(int questionId) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction tx = null;
+        Question question = new Question();
+        try {
+            tx = session.beginTransaction();
+            Query query = session.createQuery("from Question where questionId = :questionId");
+            query.setParameter("questionId", questionId);
+            question = (Question) query.uniqueResult();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            log.error(e);
+        } finally {
+            session.close();
+        }
+        return question;
+    }
+
 }

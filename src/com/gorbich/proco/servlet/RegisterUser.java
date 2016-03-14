@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Vlad on 3/9/2016.
+ * Created by Vlad on 3/11/2016.
  */
-public class AddQuestion extends HttpServlet {
+public class RegisterUser extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "/admin-addquestion.jsp";
+        String url = "/register.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }

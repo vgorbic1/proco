@@ -23,11 +23,11 @@ public class UserDaoHibernateTest {
         User user = new User();
         // To make the test pass make sure ID exists in database
         user.setUserId(1);
-        user.setUserName("Test Update UserName");
-        user.setUserPass("Test Update UserPass");
+        user.setUserName("TestProcess Update UserName");
+        user.setUserPass("TestProcess Update UserPass");
         userHibernate.updateUser(user);
         assertEquals(1, user.getUserId());
-        assertEquals("Test Update User", user.getUserName());
+        assertEquals("TestProcess Update User", user.getUserName());
     }
 
     @Test
@@ -53,4 +53,5 @@ public class UserDaoHibernateTest {
         insertedUserId = userHibernate.addUser(user);
         assertTrue(insertedUserId > 0);
     }
+
 }

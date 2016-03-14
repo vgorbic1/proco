@@ -18,32 +18,88 @@
         <servlet-name>AddQuestion</servlet-name>
         <servlet-class>com.gorbich.proco.servlet.AddQuestion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegisterUser</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.RegisterUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Admin Console</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.AdminConsole</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Test Setup</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.TestSetup</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Test Process</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.TestProcess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Edit Question</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.EditQuestion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Question</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.UpdateQuestion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Question Result</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.UpdateQuestionResult</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>RequestQuestions</servlet-name>
-        <url-pattern>/questions-all</url-pattern>
+        <url-pattern>/admin/questions-all</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreateQuestion</servlet-name>
-        <url-pattern>/question-new</url-pattern>
+        <url-pattern>/admin/question-new</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddQuestion</servlet-name>
-        <url-pattern>/question-add</url-pattern>
+        <url-pattern>/admin/question-add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterUser</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Admin Console</servlet-name>
+        <url-pattern>/admin/console</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test Setup</servlet-name>
+        <url-pattern>/test-setup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test Process</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Edit Question</servlet-name>
+        <url-pattern>/admin/edit-question</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Question</servlet-name>
+        <url-pattern>/admin/question-update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Question Result</servlet-name>
+        <url-pattern>/admin/update-question</url-pattern>
     </servlet-mapping>
 
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/login.jsp</form-login-page>
-            <form-error-page>/failedLogin.jsp</form-error-page>
+            <form-login-page>/admin-login.jsp</form-login-page>
+            <form-error-page>/admin-loginfail.jsp</form-error-page>
         </form-login-config>
     </login-config>
 
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>admin.jsp</web-resource-name>
-            <url-pattern>/admin.jsp</url-pattern>
+            <web-resource-name>Administrator's Area</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>administrator</role-name>

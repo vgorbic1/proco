@@ -1,16 +1,40 @@
 body {
-    padding: 2em;
+    padding: 1em 2em;
+    background: url('../images/paper.jpg') repeat;
 }
 
-#app {
-    margin: auto;
-    width: 20em;
-    height: 40em;
-    text-align: left;
-}
-
+/* BUTTONS */
 button {
-    margin-top: 1.5em;
+    margin: 1em 0.5em 0 0.5em;
+}
+
+.button-green,
+.button-maroon,
+.button-orange,
+.button-blue {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-green {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-maroon {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-orange {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-blue {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+.pure-table td {
+    background-color: #fff;
 }
 
 p.success {
