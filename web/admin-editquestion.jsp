@@ -20,7 +20,7 @@
         <c:remove var="message" scope="session" />
         <c:remove var="success" scope="session" />
         <a href="questions-all">
-            <button type="button" class="pure-button">All Questions</button>
+            <button type="button" class="pure-button pure-button-primary">All Questions</button>
         </a>
     </c:when>
     <c:otherwise>

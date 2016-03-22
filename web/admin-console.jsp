@@ -18,5 +18,7 @@
 <a href="questions-all"><button type="button" class="button-green pure-button">All Questions</button></a>
 <br />
 <a href="question-add"><button type="button" class="button-green pure-button">Add Question</button></a>
+<br />
+<a href="users-all"><button type="button" class="button-orange pure-button">All Users</button></a>
 </body>
 </html>

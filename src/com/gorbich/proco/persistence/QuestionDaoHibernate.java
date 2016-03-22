@@ -53,7 +53,6 @@ public class QuestionDaoHibernate {
             tx = session.beginTransaction();
             session.delete(question);
             tx.commit();
-            log.info("Question deleted");
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             log.error(e);
@@ -70,7 +69,6 @@ public class QuestionDaoHibernate {
             tx = session.beginTransaction();
             questionId = (Integer) session.save(question);
             tx.commit();
-            log.info("Added question: " + question + " with id of: " + questionId);
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             log.error(e);
@@ -80,14 +78,15 @@ public class QuestionDaoHibernate {
         return questionId;
     }
 
-    public List<Question> getSpecificCategoryQuestions(String category) {
+    public List<Question> getSpecificCategoryRandomQuestionsWithLimit(String category, int limit) {
         List<Question> questions = new ArrayList<Question>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            Query query = session.createQuery("from Question where category = :category");
+            Query query = session.createQuery("from Question where category = :category order by rand()");
             query.setParameter("category", category);
+            query.setMaxResults(limit);
             questions = query.list();
             tx.commit();
         } catch (HibernateException e) {

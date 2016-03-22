@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Vlad on 3/13/2016.
+ * Update Question Result servlet.
+ * Displays edit question page.
  */
 public class UpdateQuestionResult extends HttpServlet {
 

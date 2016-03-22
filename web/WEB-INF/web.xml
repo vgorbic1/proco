@@ -6,16 +6,22 @@
          version="3.0"
          metadata-complete="true">
 
+    <!-- Servlets used in this web application -->
     <servlet>
-        <servlet-name>RequestQuestions</servlet-name>
-        <servlet-class>com.gorbich.proco.servlet.RequestQuestions</servlet-class>
+        <servlet-name>Application Startup</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ApplicationStartup</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>CreateQuestion</servlet-name>
-        <servlet-class>com.gorbich.proco.servlet.CreateQuestion</servlet-class>
+        <servlet-name>Show All Questions</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowAllQuestions</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddQuestion</servlet-name>
+        <servlet-name>Add Question Result</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.AddQuestionResult</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add Question</servlet-name>
         <servlet-class>com.gorbich.proco.servlet.AddQuestion</servlet-class>
     </servlet>
     <servlet>
@@ -35,6 +41,10 @@
         <servlet-class>com.gorbich.proco.servlet.TestProcess</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Test Action</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.TestAction</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>Edit Question</servlet-name>
         <servlet-class>com.gorbich.proco.servlet.EditQuestion</servlet-class>
     </servlet>
@@ -46,17 +56,35 @@
         <servlet-name>Update Question Result</servlet-name>
         <servlet-class>com.gorbich.proco.servlet.UpdateQuestionResult</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Show All Users</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowAllUsers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login User</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.LoginUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Show User Statistics</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowUserStat</servlet-class>
+    </servlet>
 
+
+    <!-- Servlet mapping for this web application -->
     <servlet-mapping>
-        <servlet-name>RequestQuestions</servlet-name>
+        <servlet-name>Application Startup</servlet-name>
+        <url-pattern>/admin/startup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show All Questions</servlet-name>
         <url-pattern>/admin/questions-all</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CreateQuestion</servlet-name>
-        <url-pattern>/admin/question-new</url-pattern>
+        <servlet-name>Add Question Result</servlet-name>
+        <url-pattern>/admin/question-add-result</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AddQuestion</servlet-name>
+        <servlet-name>Add Question</servlet-name>
         <url-pattern>/admin/question-add</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -66,6 +94,7 @@
     <servlet-mapping>
         <servlet-name>Admin Console</servlet-name>
         <url-pattern>/admin/console</url-pattern>
+        <url-pattern>/admin/</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Test Setup</servlet-name>
@@ -74,6 +103,10 @@
     <servlet-mapping>
         <servlet-name>Test Process</servlet-name>
         <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test Action</servlet-name>
+        <url-pattern>/test-action</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Edit Question</servlet-name>
@@ -85,9 +118,22 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>Update Question Result</servlet-name>
-        <url-pattern>/admin/update-question</url-pattern>
+        <url-pattern>/admin/question-update-result</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show All Users</servlet-name>
+        <url-pattern>/admin/users-all</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login User</servlet-name>
+        <url-pattern>/user-login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show User Statistics</servlet-name>
+        <url-pattern>/user-stat</url-pattern>
     </servlet-mapping>
 
+    <!-- Login configuration for this web application -->
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
@@ -96,6 +142,7 @@
         </form-login-config>
     </login-config>
 
+    <!-- Security constraints referenced by this web application -->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Administrator's Area</web-resource-name>
@@ -106,4 +153,11 @@
         </auth-constraint>
     </security-constraint>
 
+    <!-- Security roles referenced by this web application -->
+    <security-role>
+        <role-name>administrator</role-name>
+    </security-role>
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
 </web-app>

@@ -1,9 +1,8 @@
 package com.gorbich.proco.servlet;
 
+import com.gorbich.proco.application.Proco;
 import com.gorbich.proco.entity.Question;
-import com.gorbich.proco.persistence.QuestionDaoHibernate;
-import org.apache.log4j.Logger;
-
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,13 +11,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * Created by Vlad on 3/13/2016.
+ * Update Question servlet
+ * Validates user's input and updates the question in database.
  */
 public class UpdateQuestion extends HttpServlet {
-    //private final Logger log = Logger.getLogger(this.getClass());
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        //log.info(session.getAttribute("editQuestion"));
         Question q = (Question) session.getAttribute("editQuestion");
         int questionId = q.getQuestionId();
 
@@ -28,8 +26,6 @@ public class UpdateQuestion extends HttpServlet {
         String answer = request.getParameter("answer");
         boolean success = true;
         String resultMessage = "";
-
-
 
         if (inquiry == "" || inquiry == null) {
             resultMessage = "<p class=\"error\">Question was empty. The saved Question is used.</p>";
@@ -44,22 +40,16 @@ public class UpdateQuestion extends HttpServlet {
         }
 
         if (success) {
-            QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
-            Question question = new Question();
-            question.setQuestionId(questionId);
-            question.setCategory(category);
-            question.setLevel(level);
-            question.setInquiry(inquiry);
-            question.setAnswer(answer);
-            questionHibernate.updateQuestion(question);
-
+            ServletContext context = getServletContext();
+            Proco proco = (Proco)context.getAttribute("proco");
+            proco.updateQuestion(questionId, category, level, inquiry, answer);
             resultMessage = "<p class='success'>Question was successfully updated</p>";
         }
 
         session.setAttribute("message", resultMessage);
         session.setAttribute("success", success);
 
-        String url = "update-question";
+        String url = "question-update-result";
         response.sendRedirect(url);
     }
 

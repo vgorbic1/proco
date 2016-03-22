@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Vlad on 3/11/2016.
+ * Admin Console servlet.
+ * Displays console page.
  */
 public class AdminConsole extends HttpServlet {
 

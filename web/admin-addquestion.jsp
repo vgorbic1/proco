@@ -17,7 +17,7 @@
 ${message}
 <c:remove var="message" scope="session" />
 <h1>Add Question</h1>
-<form action="question-new" method="post" class="pure-form pure-form-stacked">
+<form action="question-add-result" method="post" class="pure-form pure-form-stacked">
     <label for="category">Category</label>
     <select name="category" id="category">
         <option value="Java">Java</option>

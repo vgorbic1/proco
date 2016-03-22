@@ -14,19 +14,13 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
   <body>
-     <h1>Proco</h1>
+      <h1>Proco</h1>
       <p>Test your knowledge in different IT areas.</p>
       <p>You don't need to register to take a test.</p>
       <form class="pure-form pure-form-stacked" action="test-setup">
           <button type="submit" class="pure-button pure-button-primary">Take a Test</button>
       </form>
       <p><a href="admin/console">Administrator Access</a></p>
-      <!--
-      <form class="pure-form pure-form-stacked" action="/login" method="post">
-          <input type="text" placeholder="username" />
-          <input type="password" placeholder="password" />
-          <button type="submit" class="pure-button">log in</button>
-      </form>
-      -->
+      <p><a href="user-login.jsp">User Login</a></p>
   </body>
 </html>

@@ -1,39 +1,96 @@
 package com.gorbich.proco.servlet;
 
+import com.gorbich.proco.application.Proco;
 import com.gorbich.proco.entity.Question;
-import com.gorbich.proco.persistence.QuestionDaoHibernate;
+import com.gorbich.proco.entity.Result;
 import org.apache.log4j.Logger;
-
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Vlad on 3/11/2016.
+ * Test Process servlet.
+ * Returns randomized list of questions of specified category.
+ * The list is limited by specified parameter.
  */
 public class TestProcess extends HttpServlet {
-    private final Logger log = Logger.getLogger(this.getClass());
+    //private final Logger log = Logger.getLogger(this.getClass());
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String category = request.getParameter("category");
-        //int numberOfQuestions = Integer.parseInt(request.getParameter("number"));
-
         HttpSession session = request.getSession();
 
-        QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
-        List<Question> questions = questionHibernate.getSpecificCategoryQuestions(category);
-        //log.info(questions.toString());
+        if (session.getAttribute("challengeQuestions") == null) {
+            ArrayList<Result> results = new ArrayList<Result>();
+            session.setAttribute("results", results);
 
-        session.setAttribute("questionsCategory", questions);
+            String category = request.getParameter("category");
+            int limit = Integer.parseInt(request.getParameter("limit"));
+            session.setAttribute("totalNumberOfQuestions", limit);
 
-        String url = "/test-category.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+            ServletContext context = getServletContext();
+            Proco proco = (Proco) context.getAttribute("proco");
+            List<Question> questions = proco.getSpecificCategoryRandomQuestionsWithLimit(category, limit);
+            session.setAttribute("challengeQuestions", questions);
+
+            int questionNumber = 0;
+            Question currentQuestion = questions.get(questionNumber);
+            questionNumber++;
+            session.setAttribute("number", questionNumber);
+            session.setAttribute("question", currentQuestion);
+
+        } else {
+            int questionNumber = (Integer) session.getAttribute("number");
+
+            if (questionNumber < (Integer) session.getAttribute("totalNumberOfQuestions")) {
+                List<Result> results = addResultToResultList(request, session, questionNumber);
+                session.setAttribute("results", results);
+
+                List<Question> questions = (List<Question>) session.getAttribute("challengeQuestions");
+                Question currentQuestion = questions.get(questionNumber);
+                session.setAttribute("question", currentQuestion);
+
+            } else {
+                List<Result> results = addResultToResultList(request, session, questionNumber);
+                session.setAttribute("results", results);
+
+                session.removeAttribute("challengeQuestions");
+                session.removeAttribute("question");
+            }
+            questionNumber++;
+            session.setAttribute("number", questionNumber);
+
+        }
+        response.sendRedirect("test-action");
+    }
+
+
+    /**
+     * The method constructs result list
+     * @param request
+     * @param session
+     * @return result list
+     */
+    private List<Result> addResultToResultList(HttpServletRequest request, HttpSession session, int questionNumber) {
+        Question q = (Question) session.getAttribute("question");
+
+        Result result = new Result();
+        result.setQuestionNumber(questionNumber);
+        result.setLevel(q.getLevel());
+        result.setInquiry(q.getInquiry());
+        result.setAnswer(q.getAnswer());
+        String resultParameter = (request.getParameter("correct") != null) ? "correct" : "incorrect";
+        result.setResult(resultParameter);
+
+        List<Result> results = (List<Result>) session.getAttribute("results");
+        results.add(result);
+        return results;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

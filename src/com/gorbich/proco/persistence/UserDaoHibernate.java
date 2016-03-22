@@ -3,6 +3,7 @@ package com.gorbich.proco.persistence;
 import com.gorbich.proco.entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -80,5 +81,29 @@ public class UserDaoHibernate {
             session.close();
         }
         return testUserId;
+    }
+
+    public int getUserPasswordByName(String userName, String userPass) {
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction tx = null;
+        User user;
+        int userId = 0;
+        try {
+            tx = session.beginTransaction();
+            Query query = session.createQuery("from User where userName = :userName");
+            query.setParameter("userName", userName);
+            user = (User) query.uniqueResult();
+            tx.commit();
+            if(user!=null){
+
+                    userId = 5;
+            }
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            log.error(e);
+        } finally {
+            session.close();
+        }
+        return userId;
     }
 }

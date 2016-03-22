@@ -22,13 +22,14 @@
         <option value="JavaScript">JavaScript</option>
         <option value="PHP">PHP</option>
     </select>
-    <label for="number">Number of Questions</label>
-    <select name="number" id="number">
+    <label for="limit">Number of Questions</label>
+    <select name="limit" id="limit">
         <option value="10">10</option>
         <option value="20">20</option>
         <option value="30">30</option>
+        <option value="40">40</option>
     </select>
-    <button type="submit" class="pure-button">Test Me</button>
+    <button type="submit" class="pure-button pure-button-primary">Test Me</button>
 </form>
 </body>
 </html>

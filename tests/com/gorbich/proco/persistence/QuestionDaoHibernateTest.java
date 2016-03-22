@@ -59,9 +59,9 @@ public class QuestionDaoHibernateTest {
     }
 
     @Test
-    public void testGetSpecificCategoryQuestions() throws Exception {
+    public void getSpecificCategoryRandomQuestionsWithLimit() throws Exception {
         QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
-        List<Question> questions = questionHibernate.getSpecificCategoryQuestions("java");
+        List<Question> questions = questionHibernate.getSpecificCategoryRandomQuestionsWithLimit("java", 1);
         assertTrue(questions.size() > 0);
     }
 
