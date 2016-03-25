@@ -19,23 +19,24 @@
 #### Week 8
 - [x] Weekly journal entry
 - [x] Create servlets with business logic
-- [ ] Code review
+- [x] Code review
  
 #### Week 9
-- [ ] Weekly journal entry
-- [ ] Create all business logic
+- [x] Weekly journal entry
+- [x] Create all business logic servlets
  
 #### Week 10
-- [ ] Weekly journal entry
-- [ ] Test busines logic and servlets
+- [x] Weekly journal entry
+- [x] Test busines logic and servlets
 
 #### Week 11
-- [ ] Weekly journal entry
-- [ ] Add web services
-- [ ] Populate database
+- [x] Weekly journal entry
+- [x] Populate database with questions
 
 #### Week 12
 - [ ] Weekly journal entry
+- [ ] Add web services
+- [ ] Test Core Functionality
 
 #### Week 13
 - [ ] Weekly journal entry
