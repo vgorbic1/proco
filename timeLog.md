@@ -27,7 +27,7 @@
 | 2/24/16 | Assigned Readings, Exercises | 2.5 |
 | **3/7/16** | Configuration troubleshooting | 3 |
 | 3/9/16 | Add servlets and test them | 4 |
-| **3/14/16** | Individual Project | 10 |
+| **3/14/16** | Individual Project (Spring Break)  | 10 (week) |
 | **3/21/16** | Team Project created | 2 |
 | 3/22/16 | Refactoring Individual Project | 4 |
 | 3/23/16 | Testing Core Functionality | 4 |
