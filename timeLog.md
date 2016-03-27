@@ -32,5 +32,6 @@
 | 3/22/16 | Refactoring Individual Project | 4 |
 | 3/23/16 | Testing Core Functionality | 4 |
 | 3/24/16 | Assigned Reading and Activities | 4 |
-| 3/25/16 | Team Project Assignment | |
-| 3/26/16 | Testing user auth | |
+| 3/25/16 | Team Project Assignment | 1 |
+| 3/26/16 | User login and registration  | 2 |
+| 3/26/16 | HQL to Criteria | 2 |
