@@ -35,3 +35,5 @@
 | 3/25/16 | Team Project Assignment | 1 |
 | 3/26/16 | User login and registration  | 2 |
 | 3/26/16 | HQL to Criteria | 2 |
+| 3/27/16 | Field Validation | 4 |
+| **3/28/16** | | |
