@@ -35,8 +35,8 @@
 - [x] Add validation
 
 #### Week 12
-- [x] Weekly journal entry
-- [] Add pagination
+- [ ] Weekly journal entry
+- [ ] Add pagination
 - [ ] Add search
 
 #### Week 13
