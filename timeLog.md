@@ -36,4 +36,6 @@
 | 3/26/16 | User login and registration  | 2 |
 | 3/26/16 | HQL to Criteria | 2 |
 | 3/27/16 | Field Validation | 4 |
-| **3/28/16** | | |
+| **3/28/16** | Working on pagination funcitonality | 4 |
+| 3/29/16 | Adding pagination | 4 |
+| 3/31/16 | Assigned readings / videos | 4 |
