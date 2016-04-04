@@ -32,14 +32,16 @@
 #### Week 11
 - [x] Weekly journal entry
 - [x] Populate database with questions
+- [x] Add validation
 
 #### Week 12
-- [ ] Weekly journal entry
-- [ ] Add web services
-- [ ] Test Core Functionality
+- [x] Weekly journal entry
+- [] Add pagination
+- [ ] Add search
 
 #### Week 13
 - [ ] Weekly journal entry
+- [ ] Ad web services
 
 #### Week 14
 - [ ] Weekly journal entry
