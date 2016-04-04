@@ -66,16 +66,20 @@
 #### Week 11
 3/28/2016
 
-**Tasks to Complete:**
-- Refactor all servlets
-- Add web services
-- Add SQL category and populate database with questions
-- Add User Statistics table and DAOs
+**Tasks Completed:**
+- Refactored all servlets
+- Added form validation
+- Added SQL category and populate database with questions
+- Added User Statistics table and DAOs
 
 #### Week 12
 4/4/2016
 
 **Tasks to Complete:**
+- Add pagination
+- Add search functionality
+- Add delete questions functionality
+- Add web services
 
 #### Week 13
 4/11/2016
