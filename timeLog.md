@@ -39,3 +39,8 @@
 | **3/28/16** | Working on pagination funcitonality | 4 |
 | 3/29/16 | Adding pagination | 4 |
 | 3/31/16 | Assigned readings / videos | 4 |
+| **4/4/16** | Testing pagination | 2 |
+| 4/6/16 | Team Project Work | 4 |
+| 4/8/16 | Extracurricular Project 2 | 4 | 
+| 4/9/16 | Team Project Work | 4 |
+| **4/11/16** | 
