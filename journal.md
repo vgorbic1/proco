@@ -75,16 +75,18 @@
 #### Week 12
 4/4/2016
 
-**Tasks to Complete:**
-- Add pagination
-- Add search functionality
-- Add delete questions functionality
-- Add web services
+**Tasks Completed:**
+- Added pagination
+- Added search functionality
+- Moved project to Maven
 
 #### Week 13
 4/11/2016
 
 **Tasks to Complete:**
+- Add delete questions functionality
+- Add web services
+- Apply Design Patterns / Refactor
 
 #### Week 14
 4/18/2016
