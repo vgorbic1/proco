@@ -43,4 +43,8 @@
 | 4/6/16 | Team Project Work | 4 |
 | 4/8/16 | Extracurricular Project 2 | 4 | 
 | 4/9/16 | Team Project Work | 4 |
-| **4/11/16** | 
+| **4/11/16** | Team Project Work | 4 |
+| 4/14/16 | Team Project Presentation | 1 |
+| 4/16/16 | Improving pagination feature | 4 |
+| 4/17/16 | Adding Search functionality | 5 |
+| **4/18/16** | | |
