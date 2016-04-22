@@ -27,4 +27,24 @@
 | 2/24/16 | Assigned Readings, Exercises | 2.5 |
 | **3/7/16** | Configuration troubleshooting | 3 |
 | 3/9/16 | Add servlets and test them | 4 |
-
+| **3/14/16** | Individual Project (Spring Break)  | 10 (week) |
+| **3/21/16** | Team Project created | 2 |
+| 3/22/16 | Refactoring Individual Project | 4 |
+| 3/23/16 | Testing Core Functionality | 4 |
+| 3/24/16 | Assigned Reading and Activities | 4 |
+| 3/25/16 | Team Project Assignment | 1 |
+| 3/26/16 | User login and registration  | 2 |
+| 3/26/16 | HQL to Criteria | 2 |
+| 3/27/16 | Field Validation | 4 |
+| **3/28/16** | Working on pagination funcitonality | 4 |
+| 3/29/16 | Adding pagination | 4 |
+| 3/31/16 | Assigned readings / videos | 4 |
+| **4/4/16** | Testing pagination | 2 |
+| 4/6/16 | Team Project Work | 4 |
+| 4/8/16 | Extracurricular Project 2 | 4 | 
+| 4/9/16 | Team Project Work | 4 |
+| **4/11/16** | Team Project Work | 4 |
+| 4/14/16 | Team Project Presentation | 1 |
+| 4/16/16 | Improving pagination feature | 4 |
+| 4/17/16 | Adding Search functionality | 5 |
+| **4/18/16** | | |

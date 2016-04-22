@@ -50,4 +50,8 @@ fabric.properties
 # Hide Proco app files and directories
 /local_docs/
 /backups/
+<<<<<<< HEAD
 procoLog.log
+=======
+procoLog.log
+>>>>>>> 72e9cbe14a157b87e40609de0745342e186b5871
