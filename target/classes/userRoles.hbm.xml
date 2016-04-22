@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gorbich.proco.entity.UserRoles" table="user_roles">
+        <composite-id mapped="true"
+                      class="com.gorbich.proco.entity.UserRolesPK">
+            <key-property name="userName">
+                <column name="username" sql-type="varchar(255)"
+                        length="30"/>
+            </key-property>
+            <key-property name="userRole">
+                <column name="role" sql-type="varchar(255)" length="30"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

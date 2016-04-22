@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+         metadata-complete="true">
+
+    <!-- Servlets used in this web application -->
+    <servlet>
+        <servlet-name>Application Startup</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ApplicationStartup</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>Show All Questions</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowAllQuestions</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add Question Result</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.AddQuestionResult</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add Question</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.AddQuestion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Register User</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.RegisterUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Admin Console</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.AdminConsole</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Test Setup</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.TestSetup</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Test Process</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.TestProcess</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Test Action</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.TestAction</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Edit Question</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.EditQuestion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Question</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.UpdateQuestion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update Question Result</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.UpdateQuestionResult</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Show All Users</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowAllUsers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Show Login User</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowLoginUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Login User</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.LoginUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Show User Statistics</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowUserStat</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Show Register User</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowRegisterUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Test Save</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.TestSave</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Search Questions</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.SearchQuestions</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Delete Question</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.DeleteQuestion</servlet-class>
+    </servlet>
+
+
+    <!-- Servlet mapping for this web application -->
+    <servlet-mapping>
+        <servlet-name>Application Startup</servlet-name>
+        <url-pattern>/admin/startup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show All Questions</servlet-name>
+        <url-pattern>/admin/questions-all</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add Question Result</servlet-name>
+        <url-pattern>/admin/question-add-result</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add Question</servlet-name>
+        <url-pattern>/admin/question-add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Register User</servlet-name>
+        <url-pattern>/user-register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Admin Console</servlet-name>
+        <url-pattern>/admin/console</url-pattern>
+        <url-pattern>/admin/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test Setup</servlet-name>
+        <url-pattern>/test-setup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test Process</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test Action</servlet-name>
+        <url-pattern>/test-action</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Edit Question</servlet-name>
+        <url-pattern>/admin/edit-question</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Question</servlet-name>
+        <url-pattern>/admin/question-update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update Question Result</servlet-name>
+        <url-pattern>/admin/question-update-result</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show All Users</servlet-name>
+        <url-pattern>/admin/users-all</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show Login User</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login User</servlet-name>
+        <url-pattern>/user-login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show User Statistics</servlet-name>
+        <url-pattern>/stat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show Register User</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Test Save</servlet-name>
+        <url-pattern>/test-save</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Search Questions</servlet-name>
+        <url-pattern>/admin/search-questions</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete Question</servlet-name>
+        <url-pattern>/admin/delete-question</url-pattern>
+    </servlet-mapping>
+
+    <!-- Login configuration for this web application -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/admin-login.jsp</form-login-page>
+            <form-error-page>/admin-loginfail.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <!-- Security constraints referenced by this web application -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Administrator's Area</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>administrator</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Security roles referenced by this web application -->
+    <security-role>
+        <role-name>administrator</role-name>
+    </security-role>
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
+</web-app>
