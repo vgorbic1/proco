@@ -14,12 +14,12 @@ import java.io.IOException;
  */
 public class DeleteQuestion extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int questionId = Integer.parseInt(request.getParameter("questionId"));
+        int questionId = Integer.parseInt(request.getParameter("id"));
         ServletContext context = getServletContext();
         Proco proco = (Proco)context.getAttribute("proco");
         proco.deleteQuestion(questionId);
 
-        response.sendRedirect("/questions-all");
+        response.sendRedirect("questions-all");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

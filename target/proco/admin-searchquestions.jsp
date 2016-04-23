@@ -48,7 +48,7 @@
             <tr>
                 <td>
                     <a href="edit-question?id=${searchQuestion.questionId}">Edit</a>
-                    <a href="delete-question?id=${question.questionId}">Delete</a>
+                    <a href="delete-question?id=${searchQuestion.questionId}">Delete</a>
                 </td>
                 <td>${searchQuestion.category}</td>
                 <td>${searchQuestion.level}</td>
