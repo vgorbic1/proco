@@ -1,7 +1,6 @@
 package com.gorbich.proco.servlet;
 
 import com.gorbich.proco.application.Proco;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,19 +9,29 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Vlad on 4/18/2016.
+ * Delete Question servlet.
+ * Displays Delete Question page.
  */
 public class DeleteQuestion extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         int questionId = Integer.parseInt(request.getParameter("id"));
         ServletContext context = getServletContext();
         Proco proco = (Proco)context.getAttribute("proco");
         proco.deleteQuestion(questionId);
-
-        response.sendRedirect("questions-all");
+        response.sendRedirect("question-deleted");
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

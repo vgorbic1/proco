@@ -17,22 +17,26 @@ import java.io.IOException;
  */
 public class EditQuestion extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         int questionId = Integer.parseInt(request.getParameter("id"));
-
         ServletContext context = getServletContext();
         Proco proco = (Proco)context.getAttribute("proco");
         Question question = proco.getQuestionById(questionId);
-
         HttpSession session = request.getSession();
         session.setAttribute("editQuestion", question);
-
         String url = "/admin-editquestion.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        processRequest(request, response);
     }
 }

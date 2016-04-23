@@ -82,4 +82,12 @@ public class Validator {
         return null;
     }
 
+    public static boolean fieldIsEmpty(String value) {
+        if (value.equals("") || value == null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

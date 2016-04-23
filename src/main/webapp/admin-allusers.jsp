@@ -20,14 +20,19 @@
     <thead>
     <tr>
         <th>Action</th>
-        <th>User ID</th>
         <th>User Name</th>
     </tr>
     <tbody>
     <c:forEach items="${users}" var="user">
         <tr>
-            <td><a href="delete-user?id=${user.userId}">Delete</a></td>
-            <td>${user.userId}</td>
+            <c:choose>
+                <c:when test="${user.userId == 1 || user.userId == 2}">
+                    <td> - </td>
+                </c:when>
+                <c:otherwise>
+                    <td><a href="delete-user?id=${user.userId}">Delete</a></td>
+                </c:otherwise>
+            </c:choose>
             <td>${user.userName}</td>
         </tr>
     </c:forEach>

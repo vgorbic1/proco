@@ -8,14 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Add Question servlet.
- * Displays add question page.
+ * Delete User Result servlet.
+ * Displays result page of deleting a user.
  */
-public class AddQuestion extends HttpServlet {
-
+public class DeleteUserResult extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/admin-addquestion.jsp";
+        String url = "/admin-deleteusers.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
@@ -31,5 +30,4 @@ public class AddQuestion extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
 }

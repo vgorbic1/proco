@@ -1,12 +1,17 @@
 package com.gorbich.proco.application;
 
+import com.gorbich.proco.entity.Challenge;
 import com.gorbich.proco.entity.Question;
+import com.gorbich.proco.entity.Result;
 import com.gorbich.proco.entity.User;
+import com.gorbich.proco.persistence.ChallengeDaoHibernate;
 import com.gorbich.proco.persistence.QuestionDaoHibernate;
 import com.gorbich.proco.persistence.UserDaoHibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 /**
  * Class Proco
@@ -32,13 +37,59 @@ public class Proco {
         this.properties = properties;
     }
 
+
     /**
-     * The method gets Author name from the Properties file.
-     * @return Author's name.
+     * The method adds new question to database.
+     * @return String success or error message.
      */
-    public String getAuthor() {
-        String author = properties.getProperty("author");
-        return author;
+    public String addQuestion(String category, String level, String inquiry, String answer) {
+        String resultMessage;
+        if (Validator.fieldIsEmpty(inquiry)) {
+            return "Question field is empty";
+        }
+        if (Validator.fieldIsEmpty(answer)) {
+            return "Answer field is empty";
+        }
+        QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
+        Question question = new Question();
+        question.setCategory(category);
+        question.setLevel(level);
+        question.setInquiry(inquiry);
+        question.setAnswer(answer);
+        int insertedQuestionId = questionHibernate.addQuestion(question);
+        if (insertedQuestionId == 0) {
+            resultMessage = "Failed to add the Question";
+        } else {
+            resultMessage = "Question was successfully added";
+        }
+        return resultMessage;
+    }
+
+    public User authenticateUser(String userName, String userPass) {
+        UserDaoHibernate userHibernate = new UserDaoHibernate();
+        User user = null;
+        boolean result = userHibernate.authenticate(userName, userPass);
+        if (result) {
+            user = userHibernate.getUserByUserName(userName);
+        }
+        return user;
+    }
+
+    public String saveResults(List<Result> results, String userName, String category, int totalQuestions) {
+        int correctQuestions = 0;
+        for (Result res : results) {
+            if (res.getResult().equals("correct")) {
+                correctQuestions++;
+            }
+        }
+        ChallengeDaoHibernate challengeHibernate = new ChallengeDaoHibernate();
+        Challenge challenge = new Challenge();
+        challenge.setUserName(userName);
+        challenge.setCategory(category);
+        challenge.setTotalQuestions(totalQuestions);
+        challenge.setCorrectQuestions(correctQuestions);
+        challengeHibernate.addChallenge(challenge);
+        return "Test Results Saved!";
     }
 
 
@@ -53,25 +104,20 @@ public class Proco {
     }
 
 
-    /**
-     * The method adds new questions in the table.
-     * @return Id of updated question.
-     */
-    public int addQuestion(String category, String level, String inquiry, String answer) {
-        QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
-        int insertedQuestionId;
-        Question question = new Question();
-        question.setCategory(category);
-        question.setLevel(level);
-        question.setInquiry(inquiry);
-        question.setAnswer(answer);
-        insertedQuestionId = questionHibernate.addQuestion(question);
-        return insertedQuestionId;
-    }
+
 
     public void deleteQuestion(int questionId) {
         QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
-        questionHibernate.deleteQuestion(questionId);
+        Question question = new Question();
+        question.setQuestionId(questionId);
+        questionHibernate.deleteQuestion(question);
+    }
+
+    public void deleteUser(int userId) {
+        UserDaoHibernate userHibernate = new UserDaoHibernate();
+        User user = new User();
+        user.setUserId(userId);
+        userHibernate.deleteUser(user);
     }
 
     /**

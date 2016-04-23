@@ -52,14 +52,13 @@ public class ChallengeDaoHibernate {
         return challenges;
     }
 
-    public int addChallenge(Challenge challenge) {
+    public void addChallenge(Challenge challenge) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
-        Integer challengeId = null;
         try {
             tx = session.beginTransaction();
             challenge.setDate(new Date());
-            challengeId = (Integer) session.save(challenge);
+            session.save(challenge);
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
@@ -67,7 +66,6 @@ public class ChallengeDaoHibernate {
         } finally {
             session.close();
         }
-        return challengeId;
     }
 
 }

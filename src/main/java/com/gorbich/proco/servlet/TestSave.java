@@ -4,7 +4,6 @@ import com.gorbich.proco.entity.Challenge;
 import com.gorbich.proco.entity.Result;
 import com.gorbich.proco.entity.User;
 import com.gorbich.proco.persistence.ChallengeDaoHibernate;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,7 +38,7 @@ public class TestSave extends HttpServlet {
             challenge.setCategory(category);
             challenge.setTotalQuestions(totalQuestions);
             challenge.setCorrectQuestions(correctQuestions);
-            int challengeId = challengeHibernate.addChallenge(challenge);
+            challengeHibernate.addChallenge(challenge);
             response.sendRedirect("stat");
         } else {
             response.sendRedirect("login");

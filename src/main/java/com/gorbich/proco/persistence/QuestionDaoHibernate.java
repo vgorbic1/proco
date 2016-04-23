@@ -89,13 +89,12 @@ public class QuestionDaoHibernate {
         }
     }
 
-    public void deleteQuestion(int questionId) {
+    public void deleteQuestion(Question question) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            Criteria criteria = session.createCriteria(Question.class);
-            criteria.add(Restrictions.eq("questionId", questionId));
+            session.delete(question);
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();

@@ -1,6 +1,7 @@
 package com.gorbich.proco.servlet;
 
-import javax.servlet.RequestDispatcher;
+import com.gorbich.proco.application.Proco;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,16 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Add Question servlet.
- * Displays add question page.
+ * Delete User servlet.
+ * Displays page that allows to delete a user.
  */
-public class AddQuestion extends HttpServlet {
+public class DeleteUser extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/admin-addquestion.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        int userId = Integer.parseInt(request.getParameter("id"));
+        ServletContext context = getServletContext();
+        Proco proco = (Proco)context.getAttribute("proco");
+        proco.deleteUser(userId);
+        response.sendRedirect("user-deleted");
     }
 
     @Override
@@ -31,5 +34,4 @@ public class AddQuestion extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
-
 }

@@ -39,6 +39,7 @@
         <form action="test-save" method="post">
             <button type="submit" class="pure-button pure-button-primary">Save Results</button>
         </form>
+        <%@include file="includes/books.jsp" %>
         <a href="test-setup"><button type="button" class="pure-button pure-button-primary">Test me again</button></a>
     </c:when>
     <c:otherwise>
@@ -57,6 +58,7 @@
         </div>
     </c:otherwise>
 </c:choose>
+<%@include file="includes/footer.jsp" %>
 </body>
 </html>
 <script>
