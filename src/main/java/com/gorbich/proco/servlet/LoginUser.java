@@ -1,12 +1,8 @@
 package com.gorbich.proco.servlet;
 
 import com.gorbich.proco.application.Proco;
-import com.gorbich.proco.entity.Challenge;
-import com.gorbich.proco.entity.Question;
 import com.gorbich.proco.entity.Result;
 import com.gorbich.proco.entity.User;
-import com.gorbich.proco.persistence.ChallengeDaoHibernate;
-import com.gorbich.proco.persistence.UserDaoHibernate;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
