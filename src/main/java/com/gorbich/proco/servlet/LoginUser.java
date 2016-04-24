@@ -37,7 +37,8 @@ public class LoginUser extends HttpServlet {
             if (results != null) {
                 String category = (String) session.getAttribute("category");
                 int totalQuestions = (Integer) session.getAttribute("limit");
-                message = proco.saveResults(results, userName, category, totalQuestions);
+                proco.saveTestResults(userName, category, totalQuestions, results);
+                message = "Test Results Saved!";
                 session.setAttribute("statMessage", message);
             }
             // Cleanup

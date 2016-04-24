@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Vlad on 4/16/2016.
+ * Search Bean
  */
 public class Search {
     private List<Question> searchResults;

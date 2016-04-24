@@ -1,6 +1,7 @@
 package com.gorbich.proco.servlet;
 
 import com.gorbich.proco.application.Proco;
+import com.gorbich.proco.application.Validator;
 import com.gorbich.proco.entity.Question;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -15,11 +16,11 @@ import java.io.IOException;
  * Validates user's input and updates the question in database.
  */
 public class UpdateQuestion extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         HttpSession session = request.getSession();
         Question q = (Question) session.getAttribute("editQuestion");
         int questionId = q.getQuestionId();
-
         String category = request.getParameter("category");
         String level = request.getParameter("level");
         String inquiry = request.getParameter("question");
@@ -27,25 +28,22 @@ public class UpdateQuestion extends HttpServlet {
         boolean success = true;
         String resultMessage = "";
 
-        if (inquiry == "" || inquiry == null) {
-            resultMessage = "<p class=\"error\">Question was empty. The saved Question is used.</p>";
+        if (Validator.fieldIsEmpty(inquiry)) {
+            resultMessage = "Question field was empty. The saved Question is used.";
             success = false;
             session.setAttribute("answer", answer);
         }
-
-        if (answer == "" || answer == null) {
-            resultMessage += "<p class=\"error\">Answer was empty. The saved Answer is used.</p>";
+        if (Validator.fieldIsEmpty(answer)) {
+            resultMessage += "Answer field was empty. The saved Answer is used.";
             success = false;
             session.setAttribute("inquiry", inquiry);
         }
-
         if (success) {
             ServletContext context = getServletContext();
             Proco proco = (Proco)context.getAttribute("proco");
             proco.updateQuestion(questionId, category, level, inquiry, answer);
-            resultMessage = "<p class='success'>Question was successfully updated</p>";
+            resultMessage = "Question was successfully updated";
         }
-
         session.setAttribute("message", resultMessage);
         session.setAttribute("success", success);
 
@@ -53,7 +51,15 @@ public class UpdateQuestion extends HttpServlet {
         response.sendRedirect(url);
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

@@ -2,7 +2,6 @@ package com.gorbich.proco.servlet;
 
 import com.gorbich.proco.application.Proco;
 import com.gorbich.proco.entity.User;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -14,14 +13,15 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Vlad on 3/17/2016.
+ * Show All Users servlet.
+ * The servlet displays all users.
  */
 public class ShowAllUsers extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         ServletContext context = getServletContext();
         Proco proco = (Proco) context.getAttribute("proco");
         List<User> users = proco.getAllUsers();
-
         HttpSession session = request.getSession();
         session.setAttribute("users", users);
 
@@ -30,7 +30,15 @@ public class ShowAllUsers extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

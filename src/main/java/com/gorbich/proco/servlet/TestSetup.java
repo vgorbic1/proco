@@ -10,16 +10,30 @@ import java.io.IOException;
 
 /**
  * Test Setup servlet.
- * Displays test setup page.
+ * Displays test setup page and clear old results.
  */
 public class TestSetup extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.removeAttribute("challengeQuestions");
         session.removeAttribute("number");
         session.removeAttribute("question");
+
         String url = "/test-setup.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

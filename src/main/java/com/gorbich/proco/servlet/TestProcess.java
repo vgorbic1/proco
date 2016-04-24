@@ -3,8 +3,6 @@ package com.gorbich.proco.servlet;
 import com.gorbich.proco.application.Proco;
 import com.gorbich.proco.entity.Question;
 import com.gorbich.proco.entity.Result;
-import org.apache.log4j.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,15 +19,13 @@ import java.util.List;
  * The list is limited by specified parameter.
  */
 public class TestProcess extends HttpServlet {
-    //private final Logger log = Logger.getLogger(this.getClass());
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         HttpSession session = request.getSession();
-
         if (session.getAttribute("challengeQuestions") == null) {
             ArrayList<Result> results = new ArrayList<Result>();
             session.setAttribute("results", results);
-
             String category = request.getParameter("category");
             session.setAttribute("category", category);
             int limit = Integer.parseInt(request.getParameter("limit"));
@@ -49,25 +45,20 @@ public class TestProcess extends HttpServlet {
 
         } else {
             int questionNumber = (Integer) session.getAttribute("number");
-
             if (questionNumber < (Integer) session.getAttribute("totalNumberOfQuestions")) {
                 List<Result> results = addResultToResultList(request, session, questionNumber);
                 session.setAttribute("results", results);
-
                 List<Question> questions = (List<Question>) session.getAttribute("challengeQuestions");
                 Question currentQuestion = questions.get(questionNumber);
                 session.setAttribute("question", currentQuestion);
-
             } else {
                 List<Result> results = addResultToResultList(request, session, questionNumber);
                 session.setAttribute("results", results);
-
                 session.removeAttribute("challengeQuestions");
                 session.removeAttribute("question");
             }
             questionNumber++;
             session.setAttribute("number", questionNumber);
-
         }
         response.sendRedirect("test-action");
     }
@@ -81,7 +72,6 @@ public class TestProcess extends HttpServlet {
      */
     private List<Result> addResultToResultList(HttpServletRequest request, HttpSession session, int questionNumber) {
         Question q = (Question) session.getAttribute("question");
-
         Result result = new Result();
         result.setQuestionNumber(questionNumber);
         result.setLevel(q.getLevel());
@@ -89,13 +79,18 @@ public class TestProcess extends HttpServlet {
         result.setAnswer(q.getAnswer());
         String resultParameter = (request.getParameter("correct") != null) ? "correct" : "incorrect";
         result.setResult(resultParameter);
-
         List<Result> results = (List<Result>) session.getAttribute("results");
         results.add(result);
         return results;
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        processRequest(request, response);
     }
 }

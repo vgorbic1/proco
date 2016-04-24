@@ -7,11 +7,8 @@ import com.gorbich.proco.entity.User;
 import com.gorbich.proco.persistence.ChallengeDaoHibernate;
 import com.gorbich.proco.persistence.QuestionDaoHibernate;
 import com.gorbich.proco.persistence.UserDaoHibernate;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 /**
  * Class Proco
@@ -27,19 +24,22 @@ public class Proco {
      */
     public Proco() {}
 
-
     /**
      * Overloaded Constructor.
      * The constructor loads Properties file.
+     * @param properties
      */
     public Proco(Properties properties) {
         this();
         this.properties = properties;
     }
 
-
     /**
      * The method adds new question to database.
+     * @param category
+     * @param level
+     * @param inquiry
+     * @param answer
      * @return String success or error message.
      */
     public String addQuestion(String category, String level, String inquiry, String answer) {
@@ -65,6 +65,12 @@ public class Proco {
         return resultMessage;
     }
 
+    /**
+     * The method authenticates a user.
+     * @param userName
+     * @param userPass
+     * @return user object.
+     */
     public User authenticateUser(String userName, String userPass) {
         UserDaoHibernate userHibernate = new UserDaoHibernate();
         User user = null;
@@ -75,10 +81,53 @@ public class Proco {
         return user;
     }
 
-    public String saveResults(List<Result> results, String userName, String category, int totalQuestions) {
+    /**
+     * The method registers a new user.
+     * @param userName
+     * @param userPass
+     * @return true or false.
+     */
+    public String registerUser(String userName, String userPass) {
+        String name = properties.getProperty("username");
+        int min_user_chars = Integer.parseInt(properties.getProperty("min_user_characters"));
+        int max_user_chars = Integer.parseInt(properties.getProperty("max_user_characters"));
+        String allowed_user_chars = properties.getProperty("allowed_user_chars");
+
+        String message = Validator.validate(userName, name, min_user_chars, max_user_chars, allowed_user_chars);
+        if (message == null) {
+            String pass = properties.getProperty("password");
+            int min_pass_chars = Integer.parseInt(properties.getProperty("min_pass_characters"));
+            int max_pass_chars = Integer.parseInt(properties.getProperty("max_pass_characters"));
+            String allowed_pass_chars = properties.getProperty("allowed_pass_chars");
+                    message = Validator.validate(userPass, pass, min_pass_chars, max_pass_chars, allowed_pass_chars);
+        }
+        if (message == null ) {
+            User user = new User();
+            UserDaoHibernate userDaoHibernate = new UserDaoHibernate();
+            user.setUserName(userName);
+            user.setUserPass(userPass);
+            boolean result = userDaoHibernate.register(user);
+            if (result) {
+                message = "Registration Successful";
+            } else {
+                message = "Username is already taken";
+            }
+        }
+        return message;
+    }
+
+    /**
+     * The method saves test results in database.
+     * @param userName
+     * @param category
+     * @param totalQuestions
+     * @param results
+     * @return confirmation.
+    */
+    public void saveTestResults(String userName, String category, int totalQuestions, List<Result> results) {
         int correctQuestions = 0;
-        for (Result res : results) {
-            if (res.getResult().equals("correct")) {
+        for (Result result : results) {
+            if (result.getResult().equals("correct")) {
                 correctQuestions++;
             }
         }
@@ -89,23 +138,12 @@ public class Proco {
         challenge.setTotalQuestions(totalQuestions);
         challenge.setCorrectQuestions(correctQuestions);
         challengeHibernate.addChallenge(challenge);
-        return "Test Results Saved!";
     }
-
 
     /**
-     * The method requests Hibernate to return all questions in the table.
-     * @return List of questions.
+     * The method requests Hibernate to delete a questions from database.
+     * @param questionId
      */
-    public List<Question> getAllQuestions(){
-        QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
-        List<Question> questions = questionHibernate.getAllQuestions();
-        return questions;
-    }
-
-
-
-
     public void deleteQuestion(int questionId) {
         QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
         Question question = new Question();
@@ -113,6 +151,10 @@ public class Proco {
         questionHibernate.deleteQuestion(question);
     }
 
+    /**
+     * The method requests Hibernate to delete a user from database.
+     * @param userId
+     */
     public void deleteUser(int userId) {
         UserDaoHibernate userHibernate = new UserDaoHibernate();
         User user = new User();
@@ -122,7 +164,8 @@ public class Proco {
 
     /**
      * The method returns the question by submitted question id.
-     * @return The question.
+     * @param questionId
+     * @return The question object.
      */
     public Question getQuestionById(int questionId) {
         QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
@@ -134,6 +177,8 @@ public class Proco {
      * The method returns the limited list of questions
      * based on the provided category.
      * The questions in the list are in random order.
+     * @param category
+     * @param limit
      * @return The List of questions
      */
     public List<Question> getSpecificCategoryRandomQuestionsWithLimit(String category, int limit) {
@@ -141,7 +186,6 @@ public class Proco {
         List<Question> questions = questionHibernate.getSpecificCategoryRandomQuestionsWithLimit(category, limit);
         return questions;
     }
-
 
     /**
      * The method updates question in the database.
@@ -172,7 +216,11 @@ public class Proco {
         return users;
     }
 
-
+    /**
+     * The method requests Hibernate to return all questions related to search term.
+     * @param page
+     * @return search object.
+     */
     public Search getSearchQuestionsResults(int page) {
         Search search = new Search();
         QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
@@ -190,7 +238,10 @@ public class Proco {
 
     /**
      * The method requests Hibernate to return search results with pagination.
-     * @return search.
+     * @param column
+     * @param searchTerm
+     * @param page
+     * @return search object.
      */
     public Search getSearchQuestionsResults(String column, String searchTerm, int page) {
         Search search = new Search();
@@ -207,6 +258,13 @@ public class Proco {
         return search;
     }
 
+    /**
+     * The method provides pagination logic.
+     * @param search
+     * @param page
+     * @param totalNumberOfQuestions
+     * @param pageSize
+     */
     private void getPagination(Search search, int page, Long totalNumberOfQuestions, int pageSize) {
         int totalPages = ((int) (long) totalNumberOfQuestions / pageSize) + 1;
         search.setTotalNumberOfPages(totalPages);
