@@ -40,8 +40,8 @@
 - [X] Add search
 
 #### Week 13
-- [ ] Weekly journal entry
-- [ ] Ad web services
+- [X] Weekly journal entry
+- [ ] Add web services
 
 #### Week 14
 - [ ] Weekly journal entry
