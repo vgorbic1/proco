@@ -81,13 +81,18 @@
 
 #### Week 14
 
-**Tasks to Complete:**
-- Finish with web services
-- Refactor JSP
+**Tasks Completed:**
+- Finished with web services
+- Refactored JSP with templating
+- Implemented book management
+- Prepared documentation
 
 #### Week 15
 
 **Tasks to Complete:**
+- Prepare presentation and present
+- Polish code
+- JavaDocs
 
 #### Week 16
 **Tasks to Complete:**
