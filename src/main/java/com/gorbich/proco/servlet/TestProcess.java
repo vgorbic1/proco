@@ -23,6 +23,9 @@ public class TestProcess extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        ServletContext context = getServletContext();
+        Proco proco = (Proco) context.getAttribute("proco");
+
         if (session.getAttribute("challengeQuestions") == null) {
             ArrayList<Result> results = new ArrayList<Result>();
             session.setAttribute("results", results);
@@ -32,8 +35,6 @@ public class TestProcess extends HttpServlet {
             session.setAttribute("limit", limit);
             session.setAttribute("totalNumberOfQuestions", limit);
 
-            ServletContext context = getServletContext();
-            Proco proco = (Proco) context.getAttribute("proco");
             List<Question> questions = proco.getSpecificCategoryRandomQuestionsWithLimit(category, limit);
             session.setAttribute("challengeQuestions", questions);
 
@@ -53,6 +54,8 @@ public class TestProcess extends HttpServlet {
                 session.setAttribute("question", currentQuestion);
             } else {
                 List<Result> results = addResultToResultList(request, session, questionNumber);
+                List<List> requestedBooks = proco.getBooks((String)session.getAttribute("category"));
+                session.setAttribute("books", requestedBooks);
                 session.setAttribute("results", results);
                 session.removeAttribute("challengeQuestions");
                 session.removeAttribute("question");

@@ -1,7 +1,8 @@
 package com.gorbich.proco.entity;
 
 /**
- * Created by Vlad on 2/21/2016.
+ * Question bean.
+ * The class represents questions.
  */
 public class Question {
     private int questionId;
@@ -61,14 +62,4 @@ public class Question {
         this.answer = answer;
     }
 
-    @Override
-    public String toString() {
-        return "Question{" +
-                "questionId=" + questionId +
-                ", category='" + category + '\'' +
-                ", level='" + level + '\'' +
-                ", inquiry='" + inquiry + '\'' +
-                ", answer='" + answer + '\'' +
-                '}';
-    }
 }

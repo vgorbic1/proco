@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.gorbich.proco.entity.Book" table="books">
+        <meta attribute="class-description">This class contains application books.</meta>
+        <!-- Map primary key (id) to the corresponding column -->
+        <id name="bookId" type="int"
+            column="bookId">
+            <generator class="native"/>
+        </id>
+        <!--Add a property for all other instance variables/columns-->
+        <property name="category" column="category" type="string"/>
+        <property name="isbn" column="isbn" type="string"/>
+    </class>
+</hibernate-mapping>

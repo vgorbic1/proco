@@ -100,7 +100,30 @@
         <servlet-name>Delete User Result</servlet-name>
         <servlet-class>com.gorbich.proco.servlet.DeleteUserResult</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>Show All Books</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.ShowAllBooks</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add Book</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.AddBook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add Book Result</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.AddBookResult</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Log out User</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.LogoutUser</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Delete Book</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.DeleteBook</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Delete Book Result</servlet-name>
+        <servlet-class>com.gorbich.proco.servlet.DeleteBookResult</servlet-class>
+    </servlet>
 
     <!-- Servlet mapping for this web application -->
     <servlet-mapping>
@@ -195,6 +218,30 @@
     <servlet-mapping>
         <servlet-name>Delete User Result</servlet-name>
         <url-pattern>/admin/user-deleted</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show All Books</servlet-name>
+        <url-pattern>/admin/books-all</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add Book</servlet-name>
+        <url-pattern>/admin/book-add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add Book Result</servlet-name>
+        <url-pattern>/admin/book-add-result</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Log out User</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete Book</servlet-name>
+        <url-pattern>/admin/book-delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete Book Result</servlet-name>
+        <url-pattern>/admin/book-deleted</url-pattern>
     </servlet-mapping>
 
     <!-- Login configuration for this web application -->

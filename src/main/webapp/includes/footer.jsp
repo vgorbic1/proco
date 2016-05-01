@@ -1,3 +1,3 @@
 <footer>
-    <p>&copy; 2016 by Vladislav Gorbich</p>
+    <p>&copy; 2016 Vladislav Gorbich</p>
 </footer>

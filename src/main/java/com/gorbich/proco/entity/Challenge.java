@@ -3,7 +3,8 @@ package com.gorbich.proco.entity;
 import java.util.Date;
 
 /**
- * Created by Vlad on 3/25/2016.
+ * Challenge Bean.
+ * The class represents Test Statistics.
  */
 public class Challenge {
     private int challengeId;
@@ -16,7 +17,11 @@ public class Challenge {
     public Challenge() {
     }
 
-    public Challenge(int challengeId, String userName, Date date, String category, int correctQuestions, int totalQuestions) {
+    public Challenge(int challengeId,
+                     String userName,
+                     Date date, String category,
+                     int correctQuestions,
+                     int totalQuestions) {
         this.challengeId = challengeId;
         this.userName = userName;
         this.date = date;

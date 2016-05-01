@@ -1,12 +1,12 @@
 package com.gorbich.proco.persistence;
-import org.hibernate.Hibernate;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 /**
- * Created by Vlad on 2/21/2016.
+ * The session factory. Utility class for Hibernate
  */
 public class SessionFactoryProvider {
     private static SessionFactory sessionFactory;

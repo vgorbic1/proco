@@ -3,16 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <title>Proco | Test statistics for ${user.userName}</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-    <!--<![endif]-->
+    <%@include file="includes/styles.jsp" %>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -40,8 +32,8 @@
         </c:forEach>
         </tbody>
     </table>
-    <form class="pure-form pure-form-stacked" action="test-setup">
-        <button type="submit" class="pure-button pure-button-primary">Take another test</button>
-    </form>
+    <a href="test-setup"><button type="submit" class="pure-button pure-button-primary">Take another test</button></a>
+    <a href="logout"><button type="submit" class="pure-button button-orange">Log out</button></a>
+<%@include file="includes/footer.jsp" %>
 </body>
 </html>

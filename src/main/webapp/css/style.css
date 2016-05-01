@@ -3,9 +3,21 @@ body {
     background: url('../images/paper.jpg') repeat;
 }
 
+.center {
+    margin: 2em auto 0;
+    padding: 1em;
+    width: 25em;
+    text-align: center;
+    background-color: white;
+    border-color: #bcbcbc;
+    border-radius: 1em;
+}
+
 table {
     clear: both;
 }
+
+
 
 /* BUTTONS */
 button {
@@ -41,12 +53,24 @@ button {
     background-color: #fff;
 }
 
-p.success {
+.field-center select, .field-center input {
+    margin: 1em auto!important;
+}
+
+.table-center {
+    margin: 0 auto;
+}
+
+.success {
     color: green;
 }
 
-p.error {
+.error {
     color: red;
+}
+
+.pale {
+    color: #bcbcbc;
 }
 
 #hide-answer {}

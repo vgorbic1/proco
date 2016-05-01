@@ -3,7 +3,7 @@ package com.gorbich.proco.entity;
 import java.io.Serializable;
 
 /**
- * Created by Vlad on 3/4/2016.
+ * Utility class to use for primary key mapping in Hibernate.
  */
 public class UserRolesPK implements Serializable {
     private String userName;

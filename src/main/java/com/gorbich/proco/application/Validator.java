@@ -48,7 +48,7 @@ public class Validator {
      * @return result message or null
      */
     public static String hasFewerThanMinimumCharacters(String value, int chars) {
-        return (value.length() < chars) ? "Minimum " + chars + " characters allowed in " : null;
+        return (value.length() < chars) ? "minimum " + chars + " characters allowed in " : null;
     }
 
     /**
@@ -58,7 +58,7 @@ public class Validator {
      * @return result message or null
      */
     public static String hasMoreThanMaximumCharacters(String value, int chars) {
-       return (value.length() > chars) ? "Maximum " + chars + " characters allowed in " : null;
+       return (value.length() > chars) ? "maximum " + chars + " characters allowed in " : null;
     }
 
     /**
@@ -67,7 +67,7 @@ public class Validator {
      * @return result message or null
      */
     public static String containsSpace(String value) {
-        return (value.contains(" ")) ? "No spaces allowed in " : null;
+        return (value.contains(" ")) ? "no spaces allowed in " : null;
     }
 
     /**
@@ -97,6 +97,17 @@ public class Validator {
         } else {
             return false;
         }
+    }
+
+    public static boolean fieldHasAlphabeticChars(String value) {
+        try {
+            int result = Integer.parseInt(value);
+        }
+        catch(NumberFormatException nfe)
+        {
+            return true;
+        }
+        return false;
     }
 
 }

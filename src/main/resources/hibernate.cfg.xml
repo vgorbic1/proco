@@ -23,5 +23,7 @@
     <mapping class="com.gorbich.proco.entity.UserRoles" />
     <mapping resource="challenge.hbm.xml" />
     <mapping class="com.gorbich.proco.entity.Challenge" />
+    <mapping resource="book.hbm.xml" />
+    <mapping class="com.gorbich.proco.entity.Book" />
   </session-factory>
 </hibernate-configuration>

@@ -1,7 +1,8 @@
 package com.gorbich.proco.entity;
 
 /**
- * Created by Vlad on 3/17/2016.
+ * Result bean
+ * Class represents results.
  */
 public class Result {
     private int questionNumber;

@@ -1,7 +1,8 @@
 package com.gorbich.proco.entity;
 
 /**
- * Created by Vlad on 3/4/2016.
+ * User Roles bean.
+ * Class represents user roles.
  */
 public class UserRoles {
     private String userName;

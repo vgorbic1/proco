@@ -38,7 +38,7 @@ public class LoginUser extends HttpServlet {
                 String category = (String) session.getAttribute("category");
                 int totalQuestions = (Integer) session.getAttribute("limit");
                 proco.saveTestResults(userName, category, totalQuestions, results);
-                message = "Test Results Saved!";
+                message = "test results saved!";
                 session.setAttribute("statMessage", message);
             }
             // Cleanup
@@ -47,7 +47,7 @@ public class LoginUser extends HttpServlet {
             session.removeAttribute("category");
             url = "/stat";
         } else {
-            message = "Invalid username/password combination.";
+            message = "invalid username or password";
             url = "/login";
         }
 

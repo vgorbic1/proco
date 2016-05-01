@@ -4,9 +4,16 @@ import com.gorbich.proco.entity.Challenge;
 import com.gorbich.proco.entity.Question;
 import com.gorbich.proco.entity.Result;
 import com.gorbich.proco.entity.User;
+import com.gorbich.proco.persistence.BookDaoHibernate;
 import com.gorbich.proco.persistence.ChallengeDaoHibernate;
 import com.gorbich.proco.persistence.QuestionDaoHibernate;
 import com.gorbich.proco.persistence.UserDaoHibernate;
+import com.gorbich.proco.entity.Book;
+import com.gorbich.proco.service.RestClient;
+import org.apache.log4j.Logger;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -18,6 +25,7 @@ import java.util.Properties;
  */
 public class Proco {
     private Properties properties;
+    public final Logger log = Logger.getLogger(this.getClass());
 
     /**
      * Empty Constructor.
@@ -282,5 +290,69 @@ public class Proco {
         }
         search.setBeginPage(beginPage);
         search.setEndPage(endPage);
+    }
+
+    /**
+     * The method requests Hibernate to return all books.
+     * @return List of books.
+     */
+    public List<Book> getAllBooks(){
+        BookDaoHibernate bookHibernate = new BookDaoHibernate();
+        List<Book> books = bookHibernate.getAllBooks();
+        return books;
+    }
+
+    /**
+     * The method adds new book to database.
+     * @param category
+     * @param isbn
+     * @return String success or error message.
+     */
+    public String addBook(String category, String isbn) {
+        String resultMessage;
+        if (Validator.fieldIsEmpty(category)) {
+            return "Category field is empty";
+        }
+        if (Validator.fieldIsEmpty(isbn)) {
+            return "ISBN field is empty";
+        }
+        if (Validator.fieldHasAlphabeticChars(isbn)) {
+            return "ISBN field should contain numbers only";
+        }
+        BookDaoHibernate bookHibernate = new BookDaoHibernate();
+        Book book = new Book();
+        book.setCategory(category);
+        book.setIsbn(isbn);
+        int insertedBookId = bookHibernate.addBook(book);
+        if (insertedBookId == 0) {
+            resultMessage = "Failed to add the Book";
+        } else {
+            resultMessage = "Book was successfully added";
+        }
+        return resultMessage;
+    }
+
+    public List<List> getBooks(String category) throws IOException {
+        List<List> listOfBooks = new ArrayList<List>();
+        BookDaoHibernate bookHibernate = new BookDaoHibernate();
+        List<Book> books = bookHibernate.getBooksByCategory(category);
+        for (Book book : books) {
+            String isbn = book.getIsbn();
+            RestClient client = new RestClient();
+            List<String> bookInfo = client.getBookInfo(isbn);
+            listOfBooks.add(bookInfo);
+        }
+        return listOfBooks;
+    }
+
+    /**
+     * The method requests Hibernate to delete a book from database.
+     * @param bookId
+     */
+    public void deleteBook(int bookId) {
+        BookDaoHibernate bookHibernate = new BookDaoHibernate();
+        Book book = new Book();
+        book.setBookId(bookId);
+        bookHibernate.deleteBook(book);
     }
 }

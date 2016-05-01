@@ -4,16 +4,21 @@ import com.gorbich.proco.entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Vlad on 3/4/2016.
+ * DAO Hibernate to map User entity.
  */
 public class UserDaoHibernate {
     private final Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * The method authenticates the user by username and password.
+     * @param userName
+     * @param userPass
+     * @return true or false
+     */
     public boolean authenticate(String userName, String userPass) {
         User user = getUserByUserName(userName);
         if (user != null && user.getUserName().equals(userName) && user.getUserPass().equals(userPass)){
@@ -23,6 +28,10 @@ public class UserDaoHibernate {
         }
     }
 
+    /**
+     * The method returns a list of all users in database.
+     * @return list of users
+     */
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<User>();
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -40,22 +49,10 @@ public class UserDaoHibernate {
         return users;
     }
 
-    public void updateUser(User user) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Transaction tx = null;
-        try {
-            tx = session.beginTransaction();
-            session.update(user);
-            tx.commit();
-            log.info("User updated");
-        } catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
-            log.error(e);
-        } finally {
-            session.close();
-        }
-    }
-
+    /**
+     * The method deletes the user from database.
+     * @param user
+     */
     public void deleteUser(User user) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
@@ -63,7 +60,6 @@ public class UserDaoHibernate {
             tx = session.beginTransaction();
             session.delete(user);
             tx.commit();
-            log.info("User deleted");
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
             log.error(e);
@@ -72,24 +68,11 @@ public class UserDaoHibernate {
         }
     }
 
-    public int addUser(User user) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Transaction tx = null;
-        Integer testUserId = null;
-        try {
-            tx = session.beginTransaction();
-            testUserId = (Integer) session.save(user);
-            tx.commit();
-            log.info("Added user: " + user + " with id of: " + testUserId);
-        } catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
-            log.error(e);
-        } finally {
-            session.close();
-        }
-        return testUserId;
-    }
-
+    /**
+     * The method returns user info by username.
+     * @param userName
+     * @return user object
+     */
     public User getUserByUserName(String userName) {
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
@@ -109,6 +92,11 @@ public class UserDaoHibernate {
         return user;
     }
 
+    /**
+     * The method adds user to database.
+     * @param user
+     * @return true or false
+     */
     public boolean register(User user){
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         if(isUserExists(user)) return false;
@@ -129,6 +117,11 @@ public class UserDaoHibernate {
         return true;
     }
 
+    /**
+     * The method checks whether the user exists in database
+     * @param user
+     * @return true or false
+     */
     public boolean isUserExists(User user){
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         boolean result = false;
@@ -139,8 +132,6 @@ public class UserDaoHibernate {
             tx.begin();
             Criteria criteria = session.createCriteria(User.class);
             criteria.add(Restrictions.eq("userName", userName));
-            //Query query = session.createQuery("from User where userName = :userName");
-            //query.setParameter("userName", userName);
             User u = (User) criteria.uniqueResult();
             tx.commit();
             if(u!=null) result = true;

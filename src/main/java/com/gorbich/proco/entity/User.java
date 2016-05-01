@@ -1,7 +1,8 @@
 package com.gorbich.proco.entity;
 
 /**
- * Created by Vlad on 3/4/2016.
+ * User Bean.
+ * Class represents users.
  */
 public class User {
     private int userId;

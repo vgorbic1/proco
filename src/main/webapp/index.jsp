@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
     <title>Proco | Test Your IT Knowledge</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-    <![endif]-->
-    <!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-    <!--<![endif]-->
+    <%@include file="includes/styles.jsp" %>
     <link rel="stylesheet" href="css/style.css" />
 </head>
   <body>
-      <h1>Proco</h1>
-      <p>Test your knowledge in different IT areas.</p>
-      <p>You don't need to register to take a test.</p>
-      <form class="pure-form pure-form-stacked" action="test-setup">
-          <button type="submit" class="pure-button pure-button-primary">Take a Test</button>
-      </form>
-      <p><a href="admin/console">Administrator Access</a></p>
-      <p><a href="login">User Login</a></p>
+    <article class="center">
+        <h1>Proco</h1>
+        <p>Test your knowledge in different IT areas.</p>
+        <p>You don't need to register to take a test.</p>
+        <a href="test-setup"><button type="submit" class="pure-button button-green">Take a Test</button></a>
+        <br>
+        <a href="login"><button id="showAnswer" class="pure-button button-orange">Log in</button></a>
+    </article>
+    <%@include file="includes/footer.jsp" %>
+
+    <!-- REMOVE WHEN LIVE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <a href="admin/console">*</a>
+
   </body>
 </html>
