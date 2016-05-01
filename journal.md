@@ -1,7 +1,6 @@
 ## Development Journal
 
 #### Week 4
-2/8/2016
 
 **Tasks Completed:**
 - Project started localy.
@@ -9,7 +8,6 @@
 - Design / Code review finished
 
 #### Week 5
-2/15/2016
 
 **Tasks Completed:**
 - Usecase Diagram added.
@@ -25,7 +23,6 @@
 - App deployed to Open-Shift.
 
 #### Week 6
-2/22/2016
 
 **Tasks Completed:**
 - Project approved.
@@ -33,14 +30,12 @@
 - JSP pages created.
 
 #### Week 7
-2/29/2016
 
 **Tasks Completed:**
 - Interface design created
 - CSS framework connected
 
 #### Week 8
-3/7/2016
 
 **Tasks Completed:**
 - Servlets with business logic created
@@ -48,7 +43,6 @@
 - Start to populate database with questions
 
 #### Week 9
-3/14/2016
 
 **Tasks Completed:**
 - More servlets with business loginc added.
@@ -57,14 +51,12 @@
 - Core functionality tested.
 
 #### Week 10
-3/21/2016
 
 **Tasks Completed:**
 - Refactoring of several servlets.
 - User auth feature added.
 
 #### Week 11
-3/28/2016
 
 **Tasks Completed:**
 - Refactored all servlets
@@ -73,7 +65,6 @@
 - Added User Statistics table and DAOs
 
 #### Week 12
-4/4/2016
 
 **Tasks Completed:**
 - Added pagination
@@ -81,23 +72,22 @@
 - Moved project to Maven
 
 #### Week 13
-4/11/2016
 
-**Tasks to Complete:**
-- Add delete questions functionality
-- Add web services
-- Apply Design Patterns / Refactor
+**Tasks Completed:**
+- Added "delete questions" functionality
+- Added "delete user" functionality
+- Started on web services
+- Refactor and add JavaDoc
 
 #### Week 14
-4/18/2016
 
 **Tasks to Complete:**
+- Finish with web services
+- Refactor JSP
 
 #### Week 15
-4/25/2016
 
 **Tasks to Complete:**
 
 #### Week 16
-5/2/2016
 **Tasks to Complete:**

@@ -47,4 +47,7 @@
 | 4/14/16 | Team Project Presentation | 1 |
 | 4/16/16 | Improving pagination feature | 4 |
 | 4/17/16 | Adding Search functionality | 5 |
-| **4/18/16** | | |
+| **4/18/16** | Adding includes for JSP | 2 |
+| 4/23/16 | Refactor and Delete User/Questions | 4 |
+| 4/24/16 | Refactor all servlets. JavaDoc | 5 |
+| **4/25/16** | | |
