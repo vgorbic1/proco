@@ -41,11 +41,12 @@
 
 #### Week 13
 - [X] Weekly journal entry
-- [ ] Add web services
+- [X] Add web services
 
 #### Week 14
-- [ ] Weekly journal entry
-- [ ] Create final presentation
+- [X] Weekly journal entry
+- [X] Test Web services and all app
+- [X] Create final presentation
 
 #### Week 15
 - [ ] Final Presentation
