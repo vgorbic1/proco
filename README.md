@@ -39,17 +39,18 @@ The program should be written in Java and fully tested before May 15, 2016.
 
 ### Technologies and Techniques
 #### Security / Authentication
-- admin role: create/read/update questions and answers
+- admin role: create/read/update/delete questions, answers, users, books.
 - user role: perform tests; submit registration info in order to save test results; retrieve recent test statistics.
-- all: anyone can take a test.
+- all: anyone can take a test; no availability to save results.
 
 #### Database (MySQL and Hibernate)
 - Store users and roles
 - Store questions and answers
 - Store user password and statistics
+- Store ISBN for Web Service
 
 #### Web Services or APIs
-- Service consumer: Get ISBN data for suggested publications.
+- Service consumer: Provide simple book data for further studies. Retrieve the information providing book ISBN.
 - Service provider: Present question-answer pairs on a specific category or level. (under consideration)
 
 #### CSS framework
