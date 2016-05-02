@@ -49,8 +49,8 @@ The program should be written in Java and fully tested before May 15, 2016.
 - Store user password and statistics
 
 #### Web Services or APIs
-- Service consumer: Get ISBN data for suggested publications
-- Service provider: Present question-answer pairs on a specific category or level.
+- Service consumer: Get ISBN data for suggested publications.
+- Service provider: Present question-answer pairs on a specific category or level. (under consideration)
 
 #### CSS framework
 - [Pure.css](http://purecss.io/)
@@ -68,7 +68,7 @@ The program should be written in Java and fully tested before May 15, 2016.
 - jUnit tests to achieve 80% code coverage.
 
 #### Independent Research Topic:
-- Encoding
+- Encoding (Database settings to permit UTF-8 charset)
 
 [Top &#8593;](#proco)
 
