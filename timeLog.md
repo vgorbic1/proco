@@ -50,4 +50,6 @@
 | **4/18/16** | Adding includes for JSP | 2 |
 | 4/23/16 | Refactor and Delete User/Questions | 4 |
 | 4/24/16 | Refactor all servlets. JavaDoc | 5 |
-| **4/25/16** | | |
+| **4/25/16** | Create JSP templating| 3 |
+| 4/27/16 | Finish web services and test them | 4 |
+| 4/30/16 | CSS and JSP polish. Test appliction | 7 |
