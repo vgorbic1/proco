@@ -20,6 +20,7 @@
                 <th>Answer</th>
                 <th>Result</th>
             </tr>
+            </thead>
             <tbody>
             <c:forEach items="${results}" var="result"><tr>
                 <td>${result.questionNumber}</td>
@@ -55,8 +56,4 @@
 <%@include file="includes/footer.jsp" %>
 </body>
 </html>
-<script>
-    document.getElementById('showAnswer').onclick = function() {
-        document.getElementById('hide-answer').style.display='block';
-    }
-</script>
+<script src="js/script.js"></script>

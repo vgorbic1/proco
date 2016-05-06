@@ -99,6 +99,11 @@ public class Validator {
         }
     }
 
+    /**
+     * The method checks if the field has alphabetic characters.
+     * @param value
+     * @return true or false
+     */
     public static boolean fieldHasAlphabeticChars(String value) {
         try {
             int result = Integer.parseInt(value);

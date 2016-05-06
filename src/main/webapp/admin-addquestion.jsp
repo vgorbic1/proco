@@ -26,10 +26,10 @@ ${message}
         <option value="Advanced">Advanced</option>
     </select>
     <label for="question">Question</label>
-    <textarea cols="50" rows="10" name="question" id="question">${inquiry}</textarea>
+    <textarea cols="50" rows="10" name="question" id="question"></textarea>
     <c:remove var="inquiry" scope="session" />
     <label for="answer">Answer</label>
-    <textarea cols="50" rows="10" name="answer" id="answer">${answer}</textarea>
+    <textarea cols="50" rows="10" name="answer" id="answer"></textarea>
     <c:remove var="answer" scope="session" />
     <button type="submit" class="pure-button pure-button-primary">Save</button>
     <a href="questions-all"><button type="button" class="pure-button pure-button-primary">Cancel</button></a>

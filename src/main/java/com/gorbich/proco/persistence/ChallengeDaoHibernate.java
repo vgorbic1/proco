@@ -4,12 +4,11 @@ import com.gorbich.proco.entity.Challenge;
 import org.apache.log4j.Logger;
 import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
- * DAO Hibernate to map Challenge entity.
+ * DAO to map Challenge entity.
  */
 public class ChallengeDaoHibernate {
     private final Logger log = Logger.getLogger(this.getClass());
@@ -20,21 +19,12 @@ public class ChallengeDaoHibernate {
      * @return list of Challenges
      */
     public List<Challenge> getChallengesByUsername(String userName) {
-        List<Challenge> challenges = new ArrayList<Challenge>();
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Transaction tx = null;
-        try {
-            tx = session.beginTransaction();
-            Criteria criteria = session.createCriteria(Challenge.class);
-            criteria.add(Restrictions.eq("userName", userName));
-            challenges = criteria.list();
-            tx.commit();
-        } catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
-            log.error(e);
-        } finally {
-            session.close();
-        }
+        Session session = getSession();
+        List<Challenge> challenges;
+        Criteria criteria = session.createCriteria(Challenge.class);
+        criteria.add(Restrictions.eq("userName", userName));
+        challenges = criteria.list();
+        session.close();
         return challenges;
     }
 
@@ -43,7 +33,7 @@ public class ChallengeDaoHibernate {
      * @param challenge
      */
     public void addChallenge(Challenge challenge) {
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Session session = getSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -56,5 +46,33 @@ public class ChallengeDaoHibernate {
         } finally {
             session.close();
         }
+    }
+
+    /**
+     * The Method delete all user's tests (Challenges).
+     * @param userName
+     */
+    public void deleteChallengeByUsername(String userName) {
+        Session session = getSession();
+        Transaction tx = null;
+        try {
+            tx = session.beginTransaction();
+            String query = "delete Challenge where userName = :userName";
+            session.createQuery(query).setParameter("userName", userName).executeUpdate();
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            log.error(e);
+        } finally {
+            session.close();
+        }
+    }
+
+    /**
+     * Utility method to create Hibernate session.
+     * @return session
+     */
+    private Session getSession() {
+        return SessionFactoryProvider.getSessionFactory().openSession();
     }
 }

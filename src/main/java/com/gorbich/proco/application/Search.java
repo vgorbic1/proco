@@ -1,11 +1,12 @@
 package com.gorbich.proco.application;
 
 import com.gorbich.proco.entity.Question;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Search Bean
+ * Search bean
  */
 public class Search {
     private List<Question> searchResults;

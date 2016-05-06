@@ -13,43 +13,72 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Created by Vlad on 4/29/2016.
+ * Rest Client Web Service.
+ * Sends request to isbndb.com site and
+ * gets book information.
  */
 
 public class RestClient {
 
-    public List<String> getBookInfo(String isbn) throws JsonParseException,
+    /**
+     * The method gets book information from web service
+     * @param url
+     * @return
+     * @throws JsonParseException
+     * @throws JsonMappingException
+     * @throws MalformedURLException
+     * @throws IOException
+     */
+    public List<String> getBookInfo(String url) throws JsonParseException,
             JsonMappingException, MalformedURLException, IOException {
-        String url = "http://isbndb.com/api/v2/json/Y678NTDH/book/" + isbn; //0596009208
         ObjectMapper mapper = new ObjectMapper();
         mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
         Book books = mapper.readValue(new URL(url), Book.class);
-        String bookTitle = "none";
-        String bookPublisher = "none";
-        String bookAuthor = "";
+        return getData(books);
+    }
 
+    /**
+     * The method gets book data.
+     * @param books
+     * @return
+     */
+    private List<String> getData(Book books) {
+        String bookTitle;
+        String bookPublisher;
+        String bookAuthor;
         Data[] datasets = books.getData();
+        List<String> bookInfo = new ArrayList<String>();
         for (Data data : datasets) {
             bookTitle = data.getTitle();
             bookPublisher = data.getPublisher_name();
-            Author_Data[] author_names = data.getAuthor_data();
-            for (Author_Data author_data : author_names) {
-                String author = author_data.getName();
-                List<String> authorFullName = Arrays.asList(author.split(","));
-                Collections.reverse(authorFullName);
-                for (String s : authorFullName) {
-                    bookAuthor += s + " ";
-                }
-                bookAuthor = bookAuthor.replaceAll("\\s+$", "");
-                bookAuthor += ", ";
-            }
+            bookAuthor = getAuthor(data);
+            bookInfo.add(bookTitle);
+            bookInfo.add(bookPublisher);
+            bookInfo.add(bookAuthor);
         }
-
-        List<String> bookInfo = new ArrayList<String>();
-        bookInfo.add(bookTitle);
-        bookInfo.add(bookPublisher);
-        bookInfo.add(bookAuthor);
         return bookInfo;
     }
 
+    /**
+     * The method gets author(s) information and formats the string
+     * @param data
+     * @return
+     */
+    private String getAuthor(Data data) {
+        String bookAuthor = "";
+        Author_Data[] author_names = data.getAuthor_data();
+        for (Author_Data author_data : author_names) {
+            String author = author_data.getName();
+            // Split and reverse author's full name
+            List<String> authorFullName = Arrays.asList(author.split(","));
+            Collections.reverse(authorFullName);
+            for (String s : authorFullName) {
+                bookAuthor += s + " ";
+            }
+            // Remove trailing space
+            bookAuthor = bookAuthor.replaceAll("\\s+$", "");
+            bookAuthor += ", ";
+        }
+        return bookAuthor;
+    }
 }

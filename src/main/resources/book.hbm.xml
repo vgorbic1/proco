@@ -4,7 +4,7 @@
 
 <hibernate-mapping>
     <class name="com.gorbich.proco.entity.Book" table="books">
-        <meta attribute="class-description">This class contains application books.</meta>
+        <meta attribute="class-description">This class contains books and isbns.</meta>
         <!-- Map primary key (id) to the corresponding column -->
         <id name="bookId" type="int"
             column="bookId">

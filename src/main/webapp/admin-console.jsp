@@ -16,7 +16,7 @@
 <a href="books-all"><button type="button" class="button-maroon pure-button">All Books</button></a>
 <a href="book-add"><button type="button" class="button-maroon pure-button">Add Books</button></a>
 <br />
-<a href="/test-setup"><button type="button" class="button-blue pure-button">Take a Test</button></a>
+<a href="../test-setup"><button type="button" class="button-blue pure-button">Take a Test</button></a>
 </article>
 <%@include file="includes/footer.jsp" %>
 </body>

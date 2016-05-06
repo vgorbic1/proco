@@ -1,17 +1,9 @@
 package com.gorbich.proco.application;
 
-import com.gorbich.proco.entity.Challenge;
-import com.gorbich.proco.entity.Question;
-import com.gorbich.proco.entity.Result;
-import com.gorbich.proco.entity.User;
-import com.gorbich.proco.persistence.BookDaoHibernate;
-import com.gorbich.proco.persistence.ChallengeDaoHibernate;
-import com.gorbich.proco.persistence.QuestionDaoHibernate;
-import com.gorbich.proco.persistence.UserDaoHibernate;
-import com.gorbich.proco.entity.Book;
+import com.gorbich.proco.entity.*;
+import com.gorbich.proco.persistence.*;
 import com.gorbich.proco.service.RestClient;
 import org.apache.log4j.Logger;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,13 +50,13 @@ public class Proco {
         if (Validator.fieldIsEmpty(answer)) {
             return "Answer field is empty";
         }
-        QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
         Question question = new Question();
         question.setCategory(category);
         question.setLevel(level);
         question.setInquiry(inquiry);
         question.setAnswer(answer);
-        int insertedQuestionId = questionHibernate.addQuestion(question);
+        GenericDao dao = new GenericDao(Question.class);
+        int insertedQuestionId = dao.add(question);
         if (insertedQuestionId == 0) {
             resultMessage = "Failed to add the Question";
         } else {
@@ -93,21 +85,20 @@ public class Proco {
      * The method registers a new user.
      * @param userName
      * @param userPass
-     * @return true or false.
+     * @return confirmation message.
      */
     public String registerUser(String userName, String userPass) {
         String name = properties.getProperty("username");
         int min_user_chars = Integer.parseInt(properties.getProperty("min_user_characters"));
         int max_user_chars = Integer.parseInt(properties.getProperty("max_user_characters"));
         String allowed_user_chars = properties.getProperty("allowed_user_chars");
-
         String message = Validator.validate(userName, name, min_user_chars, max_user_chars, allowed_user_chars);
         if (message == null) {
             String pass = properties.getProperty("password");
             int min_pass_chars = Integer.parseInt(properties.getProperty("min_pass_characters"));
             int max_pass_chars = Integer.parseInt(properties.getProperty("max_pass_characters"));
             String allowed_pass_chars = properties.getProperty("allowed_pass_chars");
-                    message = Validator.validate(userPass, pass, min_pass_chars, max_pass_chars, allowed_pass_chars);
+            message = Validator.validate(userPass, pass, min_pass_chars, max_pass_chars, allowed_pass_chars);
         }
         if (message == null ) {
             User user = new User();
@@ -130,7 +121,6 @@ public class Proco {
      * @param category
      * @param totalQuestions
      * @param results
-     * @return confirmation.
     */
     public void saveTestResults(String userName, String category, int totalQuestions, List<Result> results) {
         int correctQuestions = 0;
@@ -153,21 +143,22 @@ public class Proco {
      * @param questionId
      */
     public void deleteQuestion(int questionId) {
-        QuestionDaoHibernate questionHibernate = new QuestionDaoHibernate();
         Question question = new Question();
         question.setQuestionId(questionId);
-        questionHibernate.deleteQuestion(question);
+        GenericDao dao = new GenericDao(Question.class);
+        dao.delete(question);
     }
 
     /**
      * The method requests Hibernate to delete a user from database.
+     * It also deletes all user's results.
      * @param userId
      */
     public void deleteUser(int userId) {
-        UserDaoHibernate userHibernate = new UserDaoHibernate();
         User user = new User();
         user.setUserId(userId);
-        userHibernate.deleteUser(user);
+        GenericDao dao = new GenericDao(User.class);
+        dao.delete(user);
     }
 
     /**
@@ -319,11 +310,11 @@ public class Proco {
         if (Validator.fieldHasAlphabeticChars(isbn)) {
             return "ISBN field should contain numbers only";
         }
-        BookDaoHibernate bookHibernate = new BookDaoHibernate();
         Book book = new Book();
         book.setCategory(category);
         book.setIsbn(isbn);
-        int insertedBookId = bookHibernate.addBook(book);
+        GenericDao dao = new GenericDao(Book.class);
+        int insertedBookId = dao.add(book);
         if (insertedBookId == 0) {
             resultMessage = "Failed to add the Book";
         } else {
@@ -332,14 +323,20 @@ public class Proco {
         return resultMessage;
     }
 
+    /**
+     * The method returns list of books.
+     * @param category
+     * @return List of books with proper information.
+     */
     public List<List> getBooks(String category) throws IOException {
         List<List> listOfBooks = new ArrayList<List>();
         BookDaoHibernate bookHibernate = new BookDaoHibernate();
         List<Book> books = bookHibernate.getBooksByCategory(category);
+        String serviceUrl = properties.getProperty("service.url");
         for (Book book : books) {
             String isbn = book.getIsbn();
             RestClient client = new RestClient();
-            List<String> bookInfo = client.getBookInfo(isbn);
+            List<String> bookInfo = client.getBookInfo(serviceUrl + isbn);
             listOfBooks.add(bookInfo);
         }
         return listOfBooks;
@@ -350,9 +347,21 @@ public class Proco {
      * @param bookId
      */
     public void deleteBook(int bookId) {
-        BookDaoHibernate bookHibernate = new BookDaoHibernate();
         Book book = new Book();
         book.setBookId(bookId);
-        bookHibernate.deleteBook(book);
+        GenericDao dao = new GenericDao(Book.class);
+        dao.delete(book);
+    }
+
+    /**
+     * The method deletes all Challenges for a specific user.
+     * @param userId
+     */
+    public void deleteUserChallenge(int userId){
+        UserDaoHibernate userHibernate = new UserDaoHibernate();
+        User user = userHibernate.getUserByUserId(userId);
+        String userName = user.getUserName();
+        ChallengeDaoHibernate challengeHibernate = new ChallengeDaoHibernate();
+        challengeHibernate.deleteChallengeByUsername(userName);
     }
 }

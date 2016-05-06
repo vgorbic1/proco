@@ -1,4 +1,3 @@
-var btn = document.getElementById('showAnswer');
-btn.onclick = function() {
-    alert("it is working!");
+document.getElementById('showAnswer').onclick = function() {
+    document.getElementById('hide-answer').style.display='block';
 }
