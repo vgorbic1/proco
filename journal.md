@@ -89,10 +89,11 @@
 
 #### Week 15
 
-**Tasks to Complete:**
-- Prepare presentation and present
-- Polish code
-- JavaDocs
+**Tasks Completed:**
+- Presentation
+- Polished code
+- More tests written
 
 #### Week 16
 **Tasks to Complete:**
+- Final touches
