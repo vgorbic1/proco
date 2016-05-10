@@ -53,3 +53,8 @@
 | **4/25/16** | Create JSP templating| 3 |
 | 4/27/16 | Finish web services and test them | 4 |
 | 4/30/16 | CSS and JSP polish. Test appliction | 7 |
+| **5/2/16** | Refactor Daos. Polish code | 3 |
+| 5/3/16 | Prepare for presentation | 2 |
+| 5/7/16 | Write tests | 5 |
+| 5/8/16 | Write tests | 3 |
+| **5/9/16** | Refactor some servlets and DAO | 3 |
