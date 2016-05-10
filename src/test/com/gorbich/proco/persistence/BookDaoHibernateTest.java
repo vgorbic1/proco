@@ -3,28 +3,32 @@ package com.gorbich.proco.persistence;
 import com.gorbich.proco.entity.Book;
 import junit.framework.TestCase;
 import org.apache.log4j.Logger;
-
+import org.junit.Before;
+import org.junit.Test;
 import java.util.List;
 
 /**
- * Created by Vlad on 4/29/2016.
+ * Tests for Book Dao.
  */
 public class BookDaoHibernateTest extends TestCase {
-    public final Logger log = Logger.getLogger(this.getClass());
+    BookDaoHibernate bookHibernate;
+
+    @Before
+    public void setUp() throws Exception {
+        bookHibernate = new BookDaoHibernate();
+    }
+
+    @Test
     public void testGetAllBooks() throws Exception {
-        BookDaoHibernate bookHibernate = new BookDaoHibernate();
-        List<Book> book = bookHibernate.getAllBooks();
-        log.info(book);
+        List<Book> books = bookHibernate.getAllBooks();
+        assertTrue(books.size() > 0);
     }
 
-    public void testAddBook() throws Exception {
-
-    }
-
+    @Test
     public void testGetBooksByCategory() throws Exception {
-    BookDaoHibernate bookHibernate = new BookDaoHibernate();
-        List<Book> book = bookHibernate.getBooksByCategory("SQL");
-        log.info(book.toString());
+        String category = "SQL";
+        List<Book> books = bookHibernate.getBooksByCategory(category);
+        assertTrue(books.size() > 0);
     }
 
 }
