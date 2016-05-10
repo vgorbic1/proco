@@ -35,22 +35,23 @@
 - [x] Add validation
 
 #### Week 12
-- [X] Weekly journal entry
-- [X] Add pagination
-- [X] Add search
+- [x] Weekly journal entry
+- [x] Add pagination
+- [x] Add search
 
 #### Week 13
-- [X] Weekly journal entry
-- [X] Add web services
+- [x] Weekly journal entry
+- [x] Add web services
 
 #### Week 14
-- [X] Weekly journal entry
-- [X] Test Web services and all app
-- [X] Create final presentation
+- [x] Weekly journal entry
+- [x] Test Web services and all app
+- [x] Create final presentation
 
 #### Week 15
-- [ ] Final Presentation
-- [ ] Weekly journal entry
+- [x] Final Presentation
+- [x] Weekly journal entry
+- [x] Write tests
 
 #### Week 16
 - [ ] Weekly journal entry
