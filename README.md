@@ -153,6 +153,25 @@ admin/tests.jsp
 |category|varchar(50)|not null|
 |level|varchar(50)|not null|
 |inquiry|text|not null |
-|answer|test|not null|
+|answer|mediumtext|not null|
+
+**Table tests**
+
+|column name|datatype|constraints|
+|---|---|---|
+|id|int(11)|pimary key, auto_increment, not null|
+|username|varchar(255)|not null|
+|date|datetime|not null|
+|category|varchar(255)|not null |
+|total|int(11)|not null|
+|correct|int(11)|not null|
+
+**Table books**
+
+|column name|datatype|constraints|
+|---|---|---|
+|bookId|int(11)|pimary key, auto_increment, not null|
+|isbn|varchar(255)|not null|
+|category|varchar(255)|not null |
 
 [Top &#8593;](#proco)
