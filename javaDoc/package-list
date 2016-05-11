@@ -1,0 +1,5 @@
+com.gorbich.proco.application
+com.gorbich.proco.controller
+com.gorbich.proco.entity
+com.gorbich.proco.persistence
+com.gorbich.proco.service
