@@ -54,4 +54,4 @@
 - [x] Write tests
 
 #### Week 16
-- [ ] Weekly journal entry
+- [x] Weekly journal entry
