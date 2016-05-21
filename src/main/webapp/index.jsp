@@ -15,9 +15,5 @@
         <a href="login"><button id="showAnswer" class="pure-button button-orange">Log in</button></a>
     </article>
     <%@include file="includes/footer.jsp" %>
-
-    <!-- REMOVE WHEN LIVE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <a href="admin/console">*</a>
-
   </body>
 </html>

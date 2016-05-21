@@ -5,6 +5,7 @@ import com.gorbich.proco.persistence.*;
 import com.gorbich.proco.service.RestClient;
 import org.apache.log4j.Logger;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -74,7 +75,10 @@ public class Proco {
     public User authenticateUser(String userName, String userPass) {
         UserDaoHibernate userHibernate = new UserDaoHibernate();
         User user = null;
-        boolean result = userHibernate.authenticate(userName, userPass);
+        byte[] salt = userHibernate.getUserSalt(userName);
+        byte[] encryptedPass = userHibernate.getUserEncryptedPass(userName);
+        PasswordEncryptionService encryptPass = new PasswordEncryptionService();
+        boolean result = encryptPass.authenticate(userPass, encryptedPass, salt);
         if (result) {
             user = userHibernate.getUserByUserName(userName);
         }
@@ -102,9 +106,13 @@ public class Proco {
         }
         if (message == null ) {
             User user = new User();
+            PasswordEncryptionService encryptPass = new PasswordEncryptionService();
             UserDaoHibernate userDaoHibernate = new UserDaoHibernate();
             user.setUserName(userName);
-            user.setUserPass(userPass);
+            byte[] salt = encryptPass.generateSalt();
+            user.setSalt(salt);
+            byte[] encryptedPassword = encryptPass.getEncryptedPassword(userPass, salt);
+            user.setUserPass(encryptedPassword);
             boolean result = userDaoHibernate.register(user);
             if (result) {
                 message = "Registration Successful";

@@ -12,6 +12,8 @@
         </id>
         <!--Add a property for all other instance variables/columns-->
         <property name="userName" column="username" type="string"/>
-        <property name="userPass" column="pass" type="string"/>
+        <property name="userPass" column="pass" type="byte[]"/>
+        <property name="salt" column="salt" type="byte[]"/>
+        <property name="adminPass" column="adminpass" type="string"/>
     </class>
 </hibernate-mapping>

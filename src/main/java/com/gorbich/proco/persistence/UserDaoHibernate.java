@@ -53,6 +53,36 @@ public class UserDaoHibernate {
     }
 
     /**
+     * The method returns user salt encryption info by user name.
+     * @param userName
+     * @return salt
+     */
+    public byte[] getUserSalt(String userName) {
+        Session session = getSession();
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.add(Restrictions.eq("userName", userName));
+        User user = (User) criteria.uniqueResult();
+        byte[] salt = user.getSalt();
+        session.close();
+        return salt;
+    }
+
+    /**
+     * The method returns user encrypted password info by user name.
+     * @param userName
+     * @return encrypted pass
+     */
+    public byte[] getUserEncryptedPass(String userName) {
+        Session session = getSession();
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.add(Restrictions.eq("userName", userName));
+        User user = (User) criteria.uniqueResult();
+        byte[] encryptedPass = user.getUserPass();
+        session.close();
+        return encryptedPass;
+    }
+
+    /**
      * The method adds user to database.
      * @param user
      * @return true or false

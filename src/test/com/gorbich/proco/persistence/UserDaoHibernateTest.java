@@ -41,7 +41,7 @@ public class UserDaoHibernateTest extends TestCase {
     public void testRegister() throws Exception {
         User user = new User();
         user.setUserName("newTestUser");
-        user.setUserPass("newTestPass");
+        //user.setUserPass("newTestPass");
         assertTrue(dao.register(user));
     }
 
@@ -49,7 +49,7 @@ public class UserDaoHibernateTest extends TestCase {
     public void testIsUserExist() throws Exception {
         User user = new User();
         user.setUserName("newTestUser");
-        user.setUserPass("newTestPass");
+        //user.setUserPass("newTestPass");
         assertTrue(dao.isUserExist(user));
     }
 

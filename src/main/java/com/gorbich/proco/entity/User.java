@@ -7,7 +7,9 @@ package com.gorbich.proco.entity;
 public class User {
     private int userId;
     private String userName;
-    private String userPass;
+    private byte[] userPass;
+    private byte[] salt;
+    private String adminPass;
 
     /**
      * Empty Constructor
@@ -21,10 +23,11 @@ public class User {
      * @param userPass
      * @param userName
      */
-    public User(int userId, String userPass, String userName) {
+    public User(int userId, byte[] userPass, String userName, byte[] salt) {
         this.userId = userId;
         this.userPass = userPass;
         this.userName = userName;
+        this.salt = salt;
     }
 
     /**
@@ -63,7 +66,7 @@ public class User {
      * Getter for User Password
      * @return userPass
      */
-    public String getUserPass() {
+    public byte[] getUserPass() {
         return userPass;
     }
 
@@ -71,7 +74,39 @@ public class User {
      * Setter for User Password
      * @param userPass
      */
-    public void setUserPass(String userPass) {
+    public void setUserPass(byte[] userPass) {
         this.userPass = userPass;
+    }
+
+    /**
+     * Getter for Salt (Encryption)
+     * @return salt
+     */
+    public byte[] getSalt() {
+        return salt;
+    }
+
+    /**
+     * Setter for Salt (Encryption)
+     * @param salt
+     */
+    public void setSalt(byte[] salt) {
+        this.salt = salt;
+    }
+
+    /**
+     * Getter for Administrator password
+     * @return adminPass
+     */
+    public String getAdminPass() {
+        return adminPass;
+    }
+
+    /**
+     * Setter for Administrator password
+     * @param adminPass
+     */
+    public void setAdminPass(String adminPass) {
+        this.adminPass = adminPass;
     }
 }
